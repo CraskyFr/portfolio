@@ -1,0 +1,92 @@
+# Plan — Portfolio développeur backend
+
+Objectif : un site sobre, rapide et professionnel centré sur l'**expérience professionnelle** : missions, responsabilités, impact, choix techniques.
+
+---
+
+## Étape 0 — Décisions ✅
+
+| Sujet | Choix |
+|---|---|
+| Stack | **Astro + TypeScript + Tailwind CSS** |
+| Langue | **Français uniquement** |
+| Domaine | **paulbodin.fr** (à vérifier / réserver) |
+| Hébergement | Vercel ou Netlify (gratuit, déploiement auto depuis GitHub) |
+| Mise en avant | **Expérience professionnelle** (projets perso en secondaire) |
+| LinkedIn | https://www.linkedin.com/in/paulbodiin/ |
+
+---
+
+## Étape 1 — Contenu (avant le code)
+
+- [ ] **Accroche** : une phrase claire (ex. « Développeur backend Java/Spring — je conçois des API robustes et maintenables »)
+- [ ] **Expériences professionnelles** — pour chaque poste :
+  - Entreprise, intitulé du poste, dates, lieu
+  - Contexte (secteur, produit, taille de l'équipe)
+  - Missions et responsabilités
+  - **Réalisations chiffrées** (perf, volumétrie, délais, qualité…)
+  - Stack technique
+- [ ] **À propos** : parcours, ce que tu aimes faire, ce que tu recherches
+- [ ] **Compétences** groupées par domaine (sans barres de pourcentage)
+- [ ] **Formation / certifications**
+- [ ] **Projets personnels** (section secondaire) : CraskyApi, CraskyUI, template Spring Boot
+- [ ] **Contact** : email, LinkedIn, GitHub, CV en PDF
+
+## Étape 2 — Initialisation du projet
+
+- [x] Créer le projet Astro (TypeScript strict) dans `portfolio/`
+- [x] Ajouter Tailwind CSS, Prettier, astro check (ESLint écarté pour l'instant)
+- [x] Structure :
+  ```
+  src/
+    components/   Header, Footer, ExperienceItem, SkillGroup, ProjectCard…
+    layouts/      BaseLayout (SEO, meta, thème)
+    pages/        index, experiences/[slug], 404
+    content/      expériences et projets en Markdown (Content Collections)
+  public/         CV.pdf, images, favicon
+  ```
+- [ ] Premier commit + dépôt GitHub
+
+## Étape 3 — Design system
+
+- [x] Palette (neutres + 1 accent), typographies (ex. Inter + JetBrains Mono)
+- [x] Mode clair / sombre
+- [x] Composants de base : boutons, cartes, badges de technos, sections
+
+## Étape 4 — Pages et sections
+
+- [ ] Layout global (header, navigation, footer)
+- [ ] Hero (nom, titre, accroche, boutons CV / Contact / LinkedIn)
+- [ ] **Expérience** : timeline détaillée, section principale du site
+- [ ] *(optionnel)* Page détaillée par mission (étude de cas avec schéma d'architecture)
+- [ ] Compétences
+- [ ] À propos + formation
+- [ ] Projets personnels
+- [ ] Contact
+- [ ] Page 404
+
+## Étape 5 — Touche backend
+
+- [ ] Schémas d'architecture (Mermaid) dans les missions marquantes, sans données confidentielles
+- [ ] *(optionnel)* Démo live de CraskyApi (Swagger UI hébergé)
+
+## Étape 6 — Qualité
+
+- [ ] Responsive (mobile, tablette, desktop)
+- [ ] Accessibilité (contrastes, navigation clavier, `alt` sur les images)
+- [ ] SEO : meta, Open Graph (aperçu LinkedIn), sitemap, `robots.txt`
+- [ ] Lighthouse ≥ 95 sur toutes les catégories
+- [ ] Relecture orthographique
+
+## Étape 7 — Déploiement
+
+- [ ] GitHub Actions (build + lint)
+- [ ] Déploiement Vercel/Netlify
+- [ ] Domaine paulbodin.fr + HTTPS
+- [ ] README propre sur le dépôt
+
+## Étape 8 — Après la mise en ligne
+
+- [ ] Lien sur LinkedIn, GitHub, CV
+- [ ] Analytics respectueux de la vie privée (Plausible / Umami), optionnel
+- [ ] Mettre à jour à chaque nouvelle mission

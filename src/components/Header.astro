@@ -1,0 +1,31 @@
+---
+import Container from './Container.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import { site } from '../data/site';
+
+const nav = [
+  { href: '/#experience', label: 'Expérience' },
+  { href: '/#competences', label: 'Compétences' },
+  { href: '/#contact', label: 'Contact' },
+];
+---
+
+<header class="border-border bg-bg/85 sticky top-0 z-10 border-b backdrop-blur">
+  <Container class="flex h-16 items-center justify-between">
+    <a href="/" class="font-semibold tracking-tight">
+      {site.name}
+    </a>
+    <nav aria-label="Navigation principale" class="flex items-center gap-1 sm:gap-4">
+      <ul class="hidden items-center gap-6 text-sm sm:flex">
+        {nav.map((item) => (
+          <li>
+            <a href={item.href} class="text-muted hover:text-fg transition-colors">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <ThemeToggle />
+    </nav>
+  </Container>
+</header>

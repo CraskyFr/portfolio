@@ -1,0 +1,13 @@
+---
+import Container from './Container.astro';
+import { site } from '../data/site';
+---
+
+<footer class="border-border text-muted border-t py-8 text-sm">
+  <Container class="flex flex-col justify-between gap-2 sm:flex-row">
+    <p>
+      © {new Date().getFullYear()} {site.name}
+    </p>
+    <p>Construit avec Astro et Tailwind CSS</p>
+  </Container>
+</footer>

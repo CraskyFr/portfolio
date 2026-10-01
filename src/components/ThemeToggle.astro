@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+---
+
+<button
+  type="button"
+  data-theme-toggle
+  class="text-muted hover:text-fg rounded-md p-2 transition-colors"
+  aria-label="Basculer entre thème clair et sombre"
+>
+  <Icon name="moon" class="size-4 dark:hidden" />
+  <Icon name="sun" class="hidden size-4 dark:block" />
+</button>
+
+<script>
+  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      try {
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+      } catch {}
+    });
+  });
+</script>

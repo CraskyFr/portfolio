@@ -1,0 +1,31 @@
+# Portfolio — Paul Bodin
+
+Site vitrine statique (Astro 7 + Tailwind CSS 4), en français uniquement, déployé sur https://paulbodin.fr.
+Le suivi des étapes est dans `PLAN.md`, le contenu brut dans `CONTENU.md`.
+
+## Commandes
+
+```bash
+npm run dev      # serveur de dev (en arrière-plan : npx astro dev --background, puis astro dev stop)
+npm run build    # build statique dans dist/
+npm run check    # vérification TypeScript / Astro
+npm run format   # Prettier (100 caractères, quotes simples)
+```
+
+## Structure
+
+- `src/data/site.ts` : identité, accroche, liens
+- `src/content/experiences/*.md` : une expérience par fichier (schéma dans `src/content.config.ts`)
+- `src/layouts/BaseLayout.astro` : HTML commun, SEO, Open Graph
+- `src/components/` : composants réutilisables
+- `public/` : fichiers servis tels quels (favicon, CV publié)
+
+## Conventions
+
+- Tout le texte du site est en français.
+- Ne jamais publier le numéro de téléphone ni d'informations confidentielles sur les missions client.
+- Les PDF sources (`Profile.pdf`, `CV_*.pdf`) à la racine sont ignorés par git.
+
+## Documentation Astro
+
+https://docs.astro.build — notamment les guides content collections, routing et styling.
