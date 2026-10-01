@@ -5,10 +5,11 @@ import Container from '../components/Container.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
 import Icon from '../components/Icon.astro';
 import Section from '../components/Section.astro';
+import Tag from '../components/Tag.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { about, domains, education, interests, languages, projects, skills } from '../data/profile';
 import { site } from '../data/site';
 
-// Les sections Compétences, À propos et Contact arrivent à l'étape 4.
 const experiences = (await getCollection('experiences')).sort(
   (a, b) => b.data.start.getTime() - a.data.start.getTime(),
 );
@@ -44,5 +45,115 @@ const experiences = (await getCollection('experiences')).sort(
         </li>
       ))}
     </ol>
+  </Section>
+
+  <Section id="competences" title="Compétences">
+    <dl class="space-y-6">
+      {skills.map((group) => (
+        <div class="grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
+          <dt class="text-muted font-mono text-sm sm:pt-0.5">{group.label}</dt>
+          <dd>
+            <ul class="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li>
+                  <Tag>{item}</Tag>
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+      ))}
+      <div class="grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
+        <dt class="text-muted font-mono text-sm">Fonctionnel</dt>
+        <dd>{domains.join(' · ')}</dd>
+      </div>
+    </dl>
+  </Section>
+
+  <Section id="projets" title="Projets personnels">
+    <ul class="grid gap-4 sm:grid-cols-2">
+      {projects.map((project) => (
+        <li class="border-border bg-surface flex flex-col rounded-lg border p-5">
+          <h3 class="font-semibold">{project.name}</h3>
+          <p class="text-muted mt-2 flex-1 text-sm leading-relaxed">{project.description}</p>
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+            {project.stack.map((tech) => (
+              <li>
+                <Tag>{tech}</Tag>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section id="a-propos" title="À propos">
+    <div class="space-y-4 leading-relaxed">
+      {about.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+    <dl class="mt-10 grid gap-8 sm:grid-cols-3">
+      <div>
+        <dt class="text-muted font-mono text-sm">Formation</dt>
+        <dd class="mt-2">
+          <p class="font-medium">{education.school}</p>
+          <p class="text-muted text-sm">{education.degree}</p>
+          <p class="text-muted text-sm">{education.period}</p>
+        </dd>
+      </div>
+      <div>
+        <dt class="text-muted font-mono text-sm">Langues</dt>
+        <dd class="mt-2">
+          <ul class="space-y-1">
+            {languages.map((language) => (
+              <li>
+                <span class="font-medium">{language.name}</span>
+                <span class="text-muted text-sm"> · {language.level}</span>
+              </li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+      <div>
+        <dt class="text-muted font-mono text-sm">En dehors du code</dt>
+        <dd class="mt-2">
+          <ul class="space-y-1">
+            {interests.map((interest) => (
+              <li>{interest}</li>
+            ))}
+          </ul>
+        </dd>
+      </div>
+    </dl>
+  </Section>
+
+  <Section id="contact" title="Contact">
+    <p class="max-w-2xl text-lg leading-relaxed">
+      Je recherche un poste de développeur backend Java à Nantes et ses alentours. Une question, une
+      opportunité ? Écrivez-moi, je réponds rapidement.
+    </p>
+    <a
+      href={`mailto:${site.email}`}
+      class="text-accent mt-6 inline-flex items-center gap-2 text-xl font-semibold hover:underline sm:text-2xl"
+    >
+      <Icon name="mail" class="size-5" />
+      {site.email}
+    </a>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <Button variant="secondary" href={site.links.linkedin} target="_blank" rel="noopener">
+        <Icon name="linkedin" />
+        LinkedIn
+      </Button>
+      <Button variant="secondary" href={site.links.github} target="_blank" rel="noopener">
+        <Icon name="github" />
+        GitHub
+      </Button>
+      <Button variant="secondary" href={site.cv} download>
+        <Icon name="download" />
+        CV (PDF)
+      </Button>
+    </div>
   </Section>
 </BaseLayout>

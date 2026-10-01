@@ -6,7 +6,7 @@ interface Props {
   experience: CollectionEntry<'experiences'>;
 }
 
-const { data } = Astro.props.experience;
+const { id, data } = Astro.props.experience;
 const month = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
 const period = `${month.format(data.start)} – ${data.end ? month.format(data.end) : "aujourd'hui"}`;
 const startYear = data.start.getFullYear();
@@ -39,5 +39,13 @@ const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — $
         </li>
       ))}
     </ul>
+    {data.featured && (
+      <a
+        href={`/experiences/${id}/`}
+        class="text-accent mt-5 inline-flex items-center gap-1 text-sm font-medium hover:underline"
+      >
+        Lire l'étude de cas →
+      </a>
+    )}
   </div>
 </article>

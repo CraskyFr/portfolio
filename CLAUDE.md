@@ -10,6 +10,7 @@ npm run dev      # serveur de dev (en arrière-plan : npx astro dev --background
 npm run build    # build statique dans dist/
 npm run check    # vérification TypeScript / Astro
 npm run format   # Prettier (100 caractères, quotes simples)
+bash scripts/generate-images.sh  # régénère og.png, apple-touch-icon.png et favicon.ico (via Edge headless)
 ```
 
 ## Structure

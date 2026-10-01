@@ -1,7 +1,7 @@
 ---
 role: Développeur Full Stack Java/Angular
 company: Aubay
-client: Aubay Innov — Advanced Customer Data Platform
+client: Advanced Customer Data Platform (Aubay Innov)
 location: Nantes
 start: 2023-04-01
 end: 2023-09-01

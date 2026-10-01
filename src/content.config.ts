@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const experiences = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/experiences' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/experiences' }),
   schema: z.object({
     role: z.string(),
     company: z.string(),
