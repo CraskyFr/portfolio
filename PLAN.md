@@ -55,15 +55,15 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 ## Étape 4 — Pages et sections
 
-- [ ] Layout global (header, navigation, footer)
-- [ ] Hero (nom, titre, accroche, boutons CV / Contact / LinkedIn)
-- [ ] **Expérience** : timeline détaillée, section principale du site
-- [ ] *(optionnel)* Page détaillée par mission (étude de cas avec schéma d'architecture)
-- [ ] Compétences
-- [ ] À propos + formation
-- [ ] Projets personnels
-- [ ] Contact
-- [ ] Page 404
+- [x] Layout global (header, navigation, footer)
+- [x] Hero (nom, titre, accroche, boutons CV / Contact / LinkedIn)
+- [x] **Expérience** : timeline détaillée, section principale du site
+- [x] *(optionnel)* Page détaillée par mission (étude de cas avec schéma d'architecture)
+- [x] Compétences
+- [x] À propos + formation
+- [x] Projets personnels
+- [x] Contact
+- [x] Page 404
 
 ## Étape 5 — Touche backend
 
