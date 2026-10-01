@@ -72,11 +72,11 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 ## Étape 6 — Qualité
 
-- [ ] Responsive (mobile, tablette, desktop)
-- [ ] Accessibilité (contrastes, navigation clavier, `alt` sur les images)
-- [ ] SEO : meta, Open Graph (aperçu LinkedIn), sitemap, `robots.txt`
-- [ ] Lighthouse ≥ 95 sur toutes les catégories
-- [ ] Relecture orthographique
+- [x] Responsive (mobile, tablette, desktop)
+- [x] Accessibilité (contrastes, navigation clavier, `alt` sur les images)
+- [x] SEO : meta, Open Graph (aperçu LinkedIn), sitemap, `robots.txt`
+- [x] Lighthouse ≥ 95 sur toutes les catégories (99–100 mesuré le 01/10/2026)
+- [x] Relecture orthographique
 
 ## Étape 7 — Déploiement
 

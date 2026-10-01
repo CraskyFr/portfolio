@@ -1,6 +1,6 @@
 export const about = [
   "Ingénieur diplômé de l'ESIEA, je me suis spécialisé dans le développement backend Java. Depuis 2024, je travaille sur la supply chain de Maisons du Monde, où j'ai participé au cadrage et au développement de l'intégration d'un nouvel OMS, avec la refonte de l'ensemble des flux autour d'une architecture événementielle sur Google Cloud.",
-  "J'aime concevoir des systèmes lisibles et robustes : des API bien contractualisées, des flux qui résistent aux pannes et un code que l'équipe a plaisir à reprendre. Le pair programming, les revues de code et la qualité du RUN font partie de ma façon de travailler.",
+  "J'aime concevoir des systèmes lisibles et robustes : des API bien contractualisées, des flux qui résistent aux pannes et un code que l'équipe a plaisir à reprendre. Le pair programming, les revues de code et la qualité du RUN font partie de ma façon de travailler.",
   "J'ai aussi une expérience full stack (Angular, React) et une sensibilité à l'accessibilité (RGAA) et au numérique responsable.",
 ];
 
@@ -46,7 +46,7 @@ export const projects = [
   {
     name: 'CraskyApi',
     description:
-      "API REST de gestion d'inventaire Counter-Strike 2, conçue en approche contract-first : le contrat OpenAPI génère les interfaces des contrôleurs.",
+      "API REST de gestion d'inventaire Counter-Strike 2, conçue en approche contract-first : le contrat OpenAPI génère les interfaces des contrôleurs.",
     stack: ['Java 24', 'Spring Boot 3', 'OpenAPI', 'PostgreSQL', 'Docker'],
   },
   {
@@ -57,7 +57,7 @@ export const projects = [
   {
     name: 'Template Spring Boot',
     description:
-      'Socle de projet réutilisable qui fixe mes conventions : architecture en couches, contrat OpenAPI, base PostgreSQL conteneurisée.',
+      'Socle de projet réutilisable qui fixe mes conventions : architecture en couches, contrat OpenAPI, base PostgreSQL conteneurisée.',
     stack: ['Java', 'Spring Boot 3', 'OpenAPI', 'Docker'],
   },
 ];
