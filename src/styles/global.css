@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/jetbrains-mono';
+@plugin '@tailwindcss/typography';
 
 /* Le mode sombre suit la classe .dark posée sur <html> (voir ThemeScript). */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -61,4 +62,19 @@
       scroll-behavior: auto;
     }
   }
+}
+
+/* Textes longs (études de cas) aux couleurs du site.
+   Hors @layer pour primer sur les variables du plugin typography. */
+.prose {
+  --tw-prose-body: var(--fg);
+  --tw-prose-headings: var(--fg);
+  --tw-prose-bold: var(--fg);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bullets: var(--accent);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--fg);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-code: var(--fg);
 }

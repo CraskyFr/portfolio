@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- Modèle de l'image d'aperçu (public/og.png), rendu en 1200x630 par scripts/generate-images.sh -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        src: url('../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2');
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2');
+        font-weight: 100 900;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 80px 96px;
+        background: oklch(0.985 0.002 75);
+        color: oklch(0.21 0.006 60);
+        font-family: 'Inter', sans-serif;
+        border-top: 12px solid oklch(0.5 0.16 258);
+      }
+      .mono {
+        font-family: 'JetBrains Mono', monospace;
+        color: oklch(0.5 0.16 258);
+        font-size: 28px;
+      }
+      h1 {
+        margin: 24px 0 0;
+        font-size: 104px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .title {
+        margin: 20px 0 0;
+        font-size: 44px;
+        color: oklch(0.47 0.008 60);
+      }
+      .tags {
+        display: flex;
+        gap: 16px;
+      }
+      .tags span {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 26px;
+        padding: 8px 20px;
+        border-radius: 999px;
+        background: oklch(0.95 0.025 258);
+        color: oklch(0.5 0.16 258);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="mono">paulbodin.fr</div>
+      <h1>Paul Bodin</h1>
+      <p class="title">Développeur Backend Java · Nantes</p>
+    </div>
+    <div class="tags">
+      <span>Java</span><span>Spring Boot</span><span>GCP</span><span>Pub/Sub</span
+      ><span>API REST</span>
+    </div>
+  </body>
+</html>

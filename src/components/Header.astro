@@ -6,6 +6,8 @@ import { site } from '../data/site';
 const nav = [
   { href: '/#experience', label: 'Expérience' },
   { href: '/#competences', label: 'Compétences' },
+  { href: '/#projets', label: 'Projets' },
+  { href: '/#a-propos', label: 'À propos' },
   { href: '/#contact', label: 'Contact' },
 ];
 ---
@@ -16,7 +18,7 @@ const nav = [
       {site.name}
     </a>
     <nav aria-label="Navigation principale" class="flex items-center gap-1 sm:gap-4">
-      <ul class="hidden items-center gap-6 text-sm sm:flex">
+      <ul class="hidden items-center gap-6 text-sm md:flex">
         {nav.map((item) => (
           <li>
             <a href={item.href} class="text-muted hover:text-fg transition-colors">
@@ -26,6 +28,53 @@ const nav = [
         ))}
       </ul>
       <ThemeToggle />
+      <button
+        type="button"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="menu-mobile"
+        class="text-muted hover:text-fg rounded-md p-2 transition-colors md:hidden"
+      >
+        <span class="sr-only">Menu</span>
+        <svg
+          class="size-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
     </nav>
   </Container>
+  <ul id="menu-mobile" hidden class="border-border border-t px-6 py-3 md:hidden">
+    {nav.map((item) => (
+      <li>
+        <a href={item.href} class="text-muted hover:text-fg block py-2">
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.getElementById('menu-mobile');
+
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      menu.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
+    );
+    menu.addEventListener('click', (event) => {
+      if ((event.target as HTMLElement).closest('a')) setOpen(false);
+    });
+  }
+</script>
