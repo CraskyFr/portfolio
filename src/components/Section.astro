@@ -12,6 +12,7 @@ const { id, title } = Astro.props;
 <section id={id} aria-labelledby={`${id}-title`} class="py-16">
   <Container>
     <h2
+      data-reveal
       id={`${id}-title`}
       class="text-muted after:bg-border flex items-center gap-4 font-mono text-xs font-semibold tracking-widest uppercase after:h-px after:flex-1"
     >
