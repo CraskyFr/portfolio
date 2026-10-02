@@ -9,7 +9,16 @@ import Section from '../components/Section.astro';
 import Tag from '../components/Tag.astro';
 import Typewriter from '../components/Typewriter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { about, domains, education, interests, languages, projects, skills } from '../data/profile';
+import {
+  about,
+  domains,
+  education,
+  interests,
+  languages,
+  principles,
+  projects,
+  skills,
+} from '../data/profile';
 import { site } from '../data/site';
 import photo from '../assets/photo/paul-bodin.jpg';
 
@@ -36,10 +45,10 @@ const neighbours = (experience: (typeof experiences)[number]) => {
     <h1 class="intro text-4xl font-bold tracking-tight sm:text-5xl" style="--delay: 40ms">
       {site.name}
     </h1>
+    <Typewriter text={site.title} class="text-muted mt-2 text-xl sm:text-2xl" delay={300} />
     <p class="intro text-accent mt-2 font-mono text-sm" style="--delay: 120ms">
       {site.location}
     </p>
-    <Typewriter text={site.title} class="text-muted mt-1 text-xl sm:text-2xl" delay={300} />
     <p class="intro mt-6 max-w-2xl text-lg leading-relaxed" style="--delay: 160ms">
       {site.tagline}
     </p>
@@ -121,6 +130,22 @@ const neighbours = (experience: (typeof experiences)[number]) => {
     </dl>
   </Section>
 
+  <Section id="methode" title="Comment je travaille">
+    <ol class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      {principles.map((principle, index) => (
+        <li data-reveal class="flex gap-4" style={`--delay: ${(index % 2) * 100}ms`}>
+          <span aria-hidden="true" class="text-accent font-mono text-sm font-semibold">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <h3 class="font-semibold">{principle.title}</h3>
+            <p class="text-muted mt-1 leading-relaxed">{principle.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </Section>
+
   <Section id="projets" title="Projets personnels" status="En cours de construction">
     <p data-reveal class="text-muted -mt-4 mb-8 max-w-2xl text-sm leading-relaxed">
       Projets menés sur mon temps libre pour expérimenter. Ils évoluent régulièrement, et de
@@ -142,6 +167,18 @@ const neighbours = (experience: (typeof experiences)[number]) => {
               </li>
             ))}
           </ul>
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener"
+              class="text-accent mt-5 inline-flex items-center gap-2 self-start text-sm font-medium hover:underline"
+            >
+              <Icon name="github" class="size-4" />
+              Voir le code sur GitHub
+              <span class="sr-only"> : {project.name} (nouvel onglet)</span>
+            </a>
+          )}
         </li>
       ))}
     </ul>

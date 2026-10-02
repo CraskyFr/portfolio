@@ -15,7 +15,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Accroche
 
-> Je conçois des API, des flux et des batchs fiables sur le cloud, pensés pour être utiles et durables.
+> Du cadrage technique au RUN, je conçois des API et des flux événementiels fiables sur le cloud.
 
 ## Expériences
 
@@ -31,9 +31,10 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
   - Intégration avec OneStock via API REST et webhooks
   - Conception de modèles de données
   - Pair programming et revues techniques
-  - Gestion du RUN applicatif
+  - RUN : diagnostic et correction des incidents de production, fonctionnels comme techniques
+  - Formation des nouveaux arrivants
   - Agile Scrum
-  - Utilisation de l'IA dans le développement (Gemini Code Assist)
+  - Utilisation de l'IA dans le développement (Gemini Code Assist) : gain de productivité sur les tâches répétitives (configuration…) et analyse de code pour repérer des améliorations ou des failles
 - **Stack** : Java, Spring Boot, Google Cloud Platform, Pub/Sub, Gemini Code Assist
 
 ### Développeur Full Stack Java/Angular — Aubay Code Factory
@@ -42,7 +43,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 - **Contexte** : applications internes, équipe de 2 à 3 développeurs, un Product Owner, un Tech Lead et un responsable projet
 - **Projets** :
   - Green Code Pattern : audit des projets sur le numérique responsable (inclusion et accessibilité, empreinte écologique), questionnaires et tableaux
-  - SVS : site vitrine des projets de l'Innov et de la Code Factory, accessible (RGAA) et internationalisé
+  - SVS : site vitrine des projets de l'Innov et de la Code Factory, accessible (RGAA) et internationalisé. **Livré en production**, utilisé pour présenter aux clients les projets d'innovation internes
 - **Missions** :
   - Backend Java Spring Boot exposant des API RESTful sur AWS, tests JUnit et Mockito
   - Application web Angular, tests Jasmine et Karma
@@ -97,12 +98,14 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Centres d'intérêt (section « À propos »)
 
-- Sport : course à pied, tennis, projet ELOP Tour
+- Sport : course à pied, tennis
 - Lecture, échecs
 - Échange avec un collège britannique
 
 ## Projets personnels
 
+- **Portfolio** (affiché, projet phare) : Astro 7, TypeScript strict, Tailwind CSS 4, CI GitHub Actions, déploiement Vercel, Lighthouse 100. Dépôt public : https://github.com/CraskyFr/portfolio
+- *À venir, quand ils seront aboutis et publics :*
 - **CraskyApi** : API REST d'inventaire CS2 (Spring Boot 3, Java 24, OpenAPI-first, PostgreSQL, Docker)
 - **CraskyUI** : interface Angular 20 pour CraskyApi
 - **Template Spring Boot** : base de projet de référence avec mes conventions

@@ -1,7 +1,28 @@
 export const about = [
-  "Ingénieur diplômé de l'ESIEA, je me suis spécialisé dans le développement backend Java. Depuis 2024, je travaille sur la supply chain de Maisons du Monde, où j'ai participé au cadrage et au développement de l'intégration d'un nouvel OMS, avec la refonte de l'ensemble des flux autour d'une architecture événementielle sur Google Cloud.",
-  "J'aime concevoir des systèmes lisibles et robustes : des API bien contractualisées, des flux qui résistent aux pannes et un code que l'équipe a plaisir à reprendre. Le pair programming, les revues de code et la qualité du RUN font partie de ma façon de travailler.",
-  "J'ai aussi une expérience full stack (Angular, React) et une sensibilité à l'accessibilité (RGAA) et au numérique responsable.",
+  "Ingénieur diplômé de l'ESIEA, je suis développeur backend Java. Depuis 2024, j'interviens sur la supply chain de Maisons du Monde : j'ai participé au cadrage technique de l'intégration d'un nouvel OMS et à la refonte des flux autour d'une architecture événementielle sur Google Cloud, dont j'assure aussi le RUN.",
+  "J'aime les systèmes lisibles et robustes : des API bien contractualisées, des flux qui résistent aux pannes et un code que l'équipe a plaisir à reprendre.",
+  "Le travail d'équipe compte autant que le code : pair programming, revues techniques, formation des nouveaux arrivants. J'ai aussi présenté un projet devant la direction et une centaine de personnes.",
+  "Mon expérience full stack (Angular, React) et mes projets autour de l'accessibilité (RGAA) et du numérique responsable complètent ce profil.",
+];
+
+// Section « Comment je travaille » : chaque principe s'appuie sur du vécu.
+export const principles = [
+  {
+    title: "Aller jusqu'à la production",
+    text: "Je ne m'arrête pas au merge : j'assure le RUN de ce que je construis, du diagnostic à la correction.",
+  },
+  {
+    title: 'Concevoir pour la panne',
+    text: "Des flux découplés par messages, rejouables en cas d'incident (Pub/Sub).",
+  },
+  {
+    title: 'Tester ce que je livre',
+    text: 'Tests unitaires (JUnit, Mockito, Jasmine), intégration continue et analyse de code (Jenkins, SonarQube).',
+  },
+  {
+    title: 'Partager ce que je sais',
+    text: 'Pair programming, revues techniques, formation des nouveaux arrivants.',
+  },
 ];
 
 export const skills = [
@@ -53,11 +74,13 @@ export const languages = [
 
 export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 
-export const projects = [
+// Projets personnels ; `url` : dépôt GitHub public, affiché en lien sur la carte.
+export const projects: { name: string; description: string; stack: string[]; url?: string }[] = [
   {
-    name: 'Template',
+    name: 'Portfolio',
     description:
-      'Test',
-    stack: ['Java', 'Spring Boot 3', 'OpenAPI', 'Docker'],
+      'Site développé en intégration et déploiement continus, performances (Lighthouse 100) et accessibilité prises en compte.',
+    stack: ['Astro 7', 'TypeScript', 'Tailwind CSS 4', 'GitHub Actions', 'Vercel'],
+    url: 'https://github.com/CraskyFr/portfolio',
   },
 ];

@@ -109,3 +109,39 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Navigation : étude plus récente / plus ancienne (boutons et flèches ← →), adresse propre `/#etude-…` (partageable, bouton retour qui ferme la carte)
 - [ ] *(optionnel)* Panneau latéral sur ordinateur, barre de progression de lecture, schéma agrandissable
 - [ ] Résultats chiffrés des missions (à fournir par Paul)
+
+## Étape 11 — Contenu qui se démarque
+
+Objectif : montrer ce que le travail a changé (impact, responsabilités, preuves), pas seulement la liste des tâches. Uniquement des faits fournis par Paul, rien de confidentiel sur les clients.
+
+### 1. Réalisations orientées impact (priorité)
+
+- [ ] 3 ou 4 lignes fortes par mission, classées par impact (verbe d'action + quoi + résultat)
+- [x] Maisons du Monde : RUN (analyse et correction des anomalies en production), relation avec le métier et d'autres équipes, formation des nouveaux arrivants
+- [x] Code Factory : SVS livré en production et utilisé pour présenter aux clients les projets d'innovation (première section « Résultats »)
+- [ ] Maisons du Monde : chiffres (nombre de flux, volumes par jour, mise en service de OneStock, incidents réduits)
+- [ ] Code Factory : usage de Green Code Pattern (projets audités), niveau RGAA atteint
+- [ ] ACDP : suite donnée aux POC et à la présentation à Paris
+- [ ] Clear Channel : réutilisation du prototype, nombre de sources de données intégrées
+
+### 2. Points forts du profil mis en avant (accroche, À propos, tête des réalisations)
+
+- [x] Architecture événementielle en production (GCP, Pub/Sub, webhooks)
+- [x] Cadrage technique (accroche « Du cadrage technique au RUN… » et À propos)
+- [x] Responsabilité du RUN et transmission (formation des nouveaux arrivants)
+- [x] IA au quotidien (Gemini Code Assist) : productivité sur les tâches répétitives, analyse de code (améliorations, failles)
+- [x] Accessibilité RGAA et numérique responsable
+- [x] Prise de parole (présentation devant la direction)
+
+### 3. Preuves
+
+- [ ] Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)
+- [x] Lien GitHub sur la carte projet (dépôt public du portfolio) ; README des futurs projets à soigner
+- [ ] Certifications ou formations (ex. GCP Associate Cloud Engineer)
+
+### 4. Pour aller plus loin
+
+- [x] Section « Comment je travaille » : 4 principes illustrés par du vécu
+- [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
+- [x] Projets personnels : ce portfolio en projet phare, avec lien GitHub (CraskyApi et CraskyUI à ajouter une fois aboutis)
+- [ ] « À propos » plus personnel : motivations, échange avec un collège britannique (ELOP Tour écarté)
