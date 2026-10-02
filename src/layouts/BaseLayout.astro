@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -67,6 +68,8 @@ const person = {
       <slot />
     </main>
     <Footer />
+    {/* Statistiques de visite Vercel : sans cookie, actives uniquement une fois déployé. */}
+    <Analytics />
     <script>
       // Révèle chaque élément [data-reveal] une seule fois, à son entrée à l'écran (styles dans global.css).
       const observer = new IntersectionObserver(
