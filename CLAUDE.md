@@ -26,7 +26,8 @@ bash scripts/generate-images.sh  # régénère og.png, apple-touch-icon.png et f
 - Tout le texte du site est en français.
 - Ne jamais publier le numéro de téléphone ni d'informations confidentielles sur les missions client.
 - Les CV sources (`Profile.pdf`, `CV_*.pdf`, `CV_*.docx`) à la racine sont ignorés par git.
-- Git : Claude peut commiter, toujours sur une branche de feature (jamais directement sur `main`), mais ne pousse jamais (`git push` interdit). Paul pousse lui-même et ouvre la PR.
+- Git : Claude peut commiter, toujours sur une branche de feature (jamais directement sur `main` : vérifier la branche avant chaque commit), mais ne pousse jamais (`git push` interdit). Paul pousse lui-même et ouvre la PR.
+- Commits : aucune ligne `Co-Authored-By` ni mention de Claude dans les messages ; Paul doit apparaître seul comme auteur sur GitHub.
 
 ## Documentation Astro
 
