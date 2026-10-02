@@ -104,6 +104,8 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Projets personnels
 
+- **Ce portfolio** (affiché, projet phare) : Astro 7, TypeScript strict, Tailwind CSS 4, CI GitHub Actions, déploiement Vercel, Lighthouse 100. Dépôt public : https://github.com/CraskyFr/portfolio
+- *À venir, quand ils seront aboutis et publics :*
 - **CraskyApi** : API REST d'inventaire CS2 (Spring Boot 3, Java 24, OpenAPI-first, PostgreSQL, Docker)
 - **CraskyUI** : interface Angular 20 pour CraskyApi
 - **Template Spring Boot** : base de projet de référence avec mes conventions

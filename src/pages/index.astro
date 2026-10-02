@@ -167,6 +167,18 @@ const neighbours = (experience: (typeof experiences)[number]) => {
               </li>
             ))}
           </ul>
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener"
+              class="text-accent mt-5 inline-flex items-center gap-2 self-start text-sm font-medium hover:underline"
+            >
+              <Icon name="github" class="size-4" />
+              Voir le code sur GitHub
+              <span class="sr-only"> : {project.name} (nouvel onglet)</span>
+            </a>
+          )}
         </li>
       ))}
     </ul>
