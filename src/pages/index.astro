@@ -5,7 +5,6 @@ import Button from '../components/Button.astro';
 import Container from '../components/Container.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
 import Icon from '../components/Icon.astro';
-import PageToc from '../components/PageToc.astro';
 import Section from '../components/Section.astro';
 import Tag from '../components/Tag.astro';
 import Typewriter from '../components/Typewriter.astro';
@@ -35,16 +34,6 @@ const neighbours = (experience: (typeof experiences)[number]) => {
 ---
 
 <BaseLayout>
-  <PageToc
-    sections={[
-      { id: 'experience', title: 'Expérience' },
-      { id: 'competences', title: 'Compétences' },
-      { id: 'methode', title: 'Comment je travaille' },
-      { id: 'projets', title: 'Projets' },
-      { id: 'a-propos', title: 'À propos' },
-      { id: 'contact', title: 'Contact' },
-    ]}
-  />
   <Container class="pt-14 pb-8 sm:pt-20">
     <Image
       src={photo}
