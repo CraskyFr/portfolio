@@ -71,6 +71,48 @@
   }
 }
 
+/* Décor des bandes latérales (voir CodeBands) : code en filigrane, fixe, fondu vers le
+   contenu et vers le haut et le bas. Affiché seulement quand les bandes sont assez larges. */
+.code-bands {
+  display: none;
+}
+
+@media (width >= 80rem) {
+  .code-bands {
+    display: block;
+  }
+
+  .code-band {
+    position: fixed;
+    top: 6rem;
+    bottom: 0;
+    z-index: -10;
+    width: calc((100vw - 48rem) / 2 - 3rem);
+    margin: 0;
+    overflow: hidden;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: color-mix(in oklch, var(--fg) 10%, transparent);
+    mask-image:
+      linear-gradient(var(--fade), #000 55%, transparent),
+      linear-gradient(to bottom, transparent, #000 10%, #000 70%, transparent);
+    mask-composite: intersect;
+  }
+
+  .code-band-left {
+    --fade: to right;
+    left: 2rem;
+  }
+
+  .code-band-right {
+    --fade: to left;
+    right: 2rem;
+    /* Code calé sur le bord droit de l'écran, en miroir de la bande gauche. */
+    text-align: right;
+  }
+}
+
 /* Sommaire en bulles de la carte d'étude de cas (voir ExperienceItem) : la bulle de la
    section en cours de lecture est pleine. */
 @layer components {
