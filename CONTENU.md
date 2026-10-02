@@ -25,13 +25,13 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 - **Domaine** : supply chain (transport, stock)
 - **Projet phare** : intégration d'un OMS (Order Management System, OneStock) et refonte complète des flux associés
 - **Missions** :
-  - Cadrage technique de l'intégration de l'OMS et construction des flux
+  - Cadrage technique de l'intégration de l'OMS
   - Développement des nouveaux flux, API REST et batchs
   - Architecture événementielle sur GCP avec des topics Pub/Sub (flux internes)
   - Intégration avec OneStock via API REST et webhooks
   - Conception de modèles de données
   - Pair programming et revues techniques
-  - RUN : analyse des problèmes et correction des anomalies fonctionnelles et techniques en production
+  - RUN : diagnostic et correction des incidents de production, fonctionnels comme techniques
   - Formation des nouveaux arrivants
   - Agile Scrum
   - Utilisation de l'IA dans le développement (Gemini Code Assist)
