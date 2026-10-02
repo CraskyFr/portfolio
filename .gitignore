@@ -26,3 +26,4 @@ pnpm-debug.log*
 # documents sources personnels (le CV publié ira dans public/)
 /Profile.pdf
 /CV_*.pdf
+/CV_*.docx

@@ -25,7 +25,7 @@ bash scripts/generate-images.sh  # régénère og.png, apple-touch-icon.png et f
 
 - Tout le texte du site est en français.
 - Ne jamais publier le numéro de téléphone ni d'informations confidentielles sur les missions client.
-- Les PDF sources (`Profile.pdf`, `CV_*.pdf`) à la racine sont ignorés par git.
+- Les CV sources (`Profile.pdf`, `CV_*.pdf`, `CV_*.docx`) à la racine sont ignorés par git.
 - Git : ne jamais commiter ni pusher. Paul commite lui-même depuis IntelliJ, sur une branche de feature (jamais directement sur `main`).
 
 ## Documentation Astro

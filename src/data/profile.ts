@@ -8,19 +8,34 @@ export const skills = [
   { label: 'Langages', items: ['Java', 'SQL', 'TypeScript', 'JavaScript', 'Python', 'Bash'] },
   {
     label: 'Backend',
-    items: ['Spring Boot', 'Spring Data JPA', 'Hibernate', 'API REST', 'OpenAPI', 'JUnit'],
+    items: [
+      'Spring Boot',
+      'Spring Data JPA',
+      'Hibernate',
+      'API REST',
+      'OpenAPI',
+      'JUnit',
+      'Mockito',
+    ],
   },
   { label: 'Cloud', items: ['Google Cloud Platform', 'Pub/Sub', 'AWS', 'Rancher'] },
   { label: 'Données', items: ['PostgreSQL', 'Oracle', 'MariaDB', 'MongoDB', 'Redis'] },
-  { label: 'DevOps', items: ['Docker', 'Kubernetes', 'GitLab CI', 'Jenkins', 'Maven', 'Rundeck'] },
+  {
+    label: 'DevOps',
+    items: ['Docker', 'Kubernetes', 'GitLab CI', 'Jenkins', 'SonarQube', 'Maven', 'Rundeck'],
+  },
   { label: 'Front', items: ['Angular', 'React', 'Node.js'] },
-  { label: 'Méthodes', items: ['Agile Scrum', 'Pair programming', 'Revue de code', 'Jira'] },
+  {
+    label: 'Méthodes',
+    items: ['Agile Scrum', 'Kanban', 'Pair programming', 'Revue de code', 'Jira'],
+  },
 ];
 
 export const domains = [
   'Transport',
   'Stock',
   'Publicité',
+  'Marketing',
   'Accessibilité',
   'Numérique responsable',
 ];
@@ -36,11 +51,7 @@ export const languages = [
   { name: 'Espagnol', level: 'Intermédiaire' },
 ];
 
-export const interests = [
-  'Course à pied et tennis',
-  'Échecs et lecture',
-  'Soutien scolaire bénévole en maison de quartier',
-];
+export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 
 export const projects = [
   {

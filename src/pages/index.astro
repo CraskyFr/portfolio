@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Button from '../components/Button.astro';
 import Container from '../components/Container.astro';
@@ -10,19 +11,35 @@ import Typewriter from '../components/Typewriter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { about, domains, education, interests, languages, projects, skills } from '../data/profile';
 import { site } from '../data/site';
+import photo from '../assets/photo/paul-bodin.jpg';
 
 const experiences = (await getCollection('experiences')).sort(
   (a, b) => b.data.start.getTime() - a.data.start.getTime(),
 );
+// Études de cas voisines dans la frise (de la plus récente à la plus ancienne).
+const caseStudies = experiences.filter((experience) => experience.data.featured);
+const neighbours = (experience: (typeof experiences)[number]) => {
+  const index = caseStudies.indexOf(experience);
+  return index === -1 ? {} : { newer: caseStudies[index - 1], older: caseStudies[index + 1] };
+};
 ---
 
 <BaseLayout>
-  <Container class="pt-20 pb-8 sm:pt-28">
-    <p class="intro text-accent font-mono text-sm">{site.location}</p>
-    <h1 class="intro mt-3 text-4xl font-bold tracking-tight sm:text-5xl" style="--delay: 80ms">
+  <Container class="pt-14 pb-8 sm:pt-20">
+    <Image
+      src={photo}
+      alt={`Photo de ${site.name}`}
+      width={224}
+      loading="eager"
+      class="intro border-border mb-6 size-24 rounded-full border object-cover object-[50%_20%] sm:size-28"
+    />
+    <h1 class="intro text-4xl font-bold tracking-tight sm:text-5xl" style="--delay: 40ms">
       {site.name}
     </h1>
-    <Typewriter text={site.title} class="text-muted mt-2 text-xl sm:text-2xl" delay={300} />
+    <p class="intro text-accent mt-2 font-mono text-sm" style="--delay: 120ms">
+      {site.location}
+    </p>
+    <Typewriter text={site.title} class="text-muted mt-1 text-xl sm:text-2xl" delay={300} />
     <p class="intro mt-6 max-w-2xl text-lg leading-relaxed" style="--delay: 160ms">
       {site.tagline}
     </p>
@@ -68,9 +85,13 @@ const experiences = (await getCollection('experiences')).sort(
         class="timeline-line bg-accent absolute top-2 bottom-0 left-36 hidden w-px sm:block"
       ></span>
       <ol class="space-y-14">
-        {experiences.map((experience) => (
+        {experiences.map((experience, index) => (
           <li data-reveal>
-            <ExperienceItem experience={experience} />
+            <ExperienceItem
+              experience={experience}
+              eager={index === 0}
+              {...neighbours(experience)}
+            />
           </li>
         ))}
       </ol>
