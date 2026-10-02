@@ -10,8 +10,9 @@ const { variant = 'primary', class: className, ...attrs } = Astro.props;
 
 <a
   class:list={[
-    'inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors',
-    variant === 'primary' && 'bg-accent text-bg hover:opacity-90',
+    'inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition duration-150 motion-safe:hover:-translate-y-0.5',
+    variant === 'primary' &&
+      'bg-accent text-bg hover:shadow-accent/30 hover:opacity-90 hover:shadow-md',
     variant === 'secondary' && 'border-border hover:border-accent hover:text-accent border',
     className,
   ]}

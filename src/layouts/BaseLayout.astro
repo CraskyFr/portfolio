@@ -67,5 +67,19 @@ const person = {
       <slot />
     </main>
     <Footer />
+    <script>
+      // Révèle chaque élément [data-reveal] une seule fois, à son entrée à l'écran (styles dans global.css).
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        },
+        { rootMargin: '0px 0px -10% 0px' },
+      );
+      document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+    </script>
   </body>
 </html>

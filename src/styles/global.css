@@ -64,6 +64,85 @@
   }
 }
 
+/* Animations : courtes, jamais bloquantes pour la lecture.
+   Désactivées si l'utilisateur réduit les mouvements, et ignorées à l'impression. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes draw-line {
+  from {
+    scale: 1 0;
+  }
+}
+
+.timeline-line {
+  visibility: hidden;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  /* Apparition au chargement, décalée via --delay. */
+  .intro {
+    animation: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms) backwards;
+  }
+
+  /* Apparition au défilement : masqué seulement si le JS tourne (classe .js sur <html>). */
+  .js [data-reveal] {
+    opacity: 0;
+    translate: 0 0.75rem;
+    transition:
+      opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms),
+      translate 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms);
+  }
+
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    translate: none;
+  }
+
+  /* Curseur de l'effet machine à écrire (voir Typewriter). */
+  .typewriter[data-typing]::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 2px;
+    translate: 0 0.15em;
+    background: var(--accent);
+    animation: caret-blink 1s steps(1) infinite;
+  }
+
+  /* Frise : la ligne se dessine au défilement, sans JS, là où le navigateur le permet.
+     Ailleurs, seul le rail gris reste visible. */
+  @supports (animation-timeline: view()) {
+    .timeline-line {
+      visibility: visible;
+      transform-origin: top;
+      animation-name: draw-line;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      /* Progression mesurée sur une bande au milieu de l'écran : la pointe suit la lecture. */
+      animation-timeline: view(block 40% 40%);
+    }
+  }
+}
+
+/* Changement de thème : le nouveau thème s'étend en cercle depuis le bouton (voir ThemeToggle). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 /* Textes longs (études de cas) aux couleurs du site.
    Hors @layer pour primer sur les variables du plugin typography. */
 .prose {

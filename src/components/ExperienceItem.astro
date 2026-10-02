@@ -14,7 +14,11 @@ const endYear = data.end?.getFullYear();
 const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — ${endYear ?? 'auj.'}`;
 ---
 
-<article class="grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
+<article class="relative grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
+  <span
+    aria-hidden="true"
+    class="bg-accent ring-bg absolute top-2 left-36 hidden size-2 -translate-x-1/2 rounded-full ring-4 sm:block"
+  ></span>
   <p class="text-muted font-mono text-sm sm:pt-1">
     <span class="sr-only">{period}</span>
     <span aria-hidden="true" title={period}>
@@ -42,9 +46,15 @@ const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — $
     {data.featured && (
       <a
         href={`/experiences/${id}/`}
-        class="text-accent mt-5 inline-flex items-center gap-1 text-sm font-medium hover:underline"
+        class="group text-accent mt-5 inline-flex items-center gap-1 text-sm font-medium hover:underline"
       >
-        Lire l'étude de cas →
+        Lire l'étude de cas
+        <span
+          aria-hidden="true"
+          class="inline-block transition-transform motion-safe:group-hover:translate-x-1"
+        >
+          →
+        </span>
       </a>
     )}
   </div>
