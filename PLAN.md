@@ -109,3 +109,39 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Navigation : étude plus récente / plus ancienne (boutons et flèches ← →), adresse propre `/#etude-…` (partageable, bouton retour qui ferme la carte)
 - [ ] *(optionnel)* Panneau latéral sur ordinateur, barre de progression de lecture, schéma agrandissable
 - [ ] Résultats chiffrés des missions (à fournir par Paul)
+
+## Étape 11 — Contenu qui se démarque
+
+Objectif : montrer ce que le travail a changé (impact, responsabilités, preuves), pas seulement la liste des tâches. Uniquement des faits fournis par Paul, rien de confidentiel sur les clients.
+
+### 1. Réalisations orientées impact (priorité)
+
+- [ ] 3 ou 4 lignes fortes par mission, classées par impact (verbe d'action + quoi + résultat)
+- [x] Maisons du Monde : RUN (analyse et correction des anomalies en production), relation avec le métier et d'autres équipes, formation des nouveaux arrivants
+- [x] Code Factory : SVS livré en production et utilisé pour présenter aux clients les projets d'innovation (première section « Résultats »)
+- [ ] Maisons du Monde : chiffres (nombre de flux, volumes par jour, mise en service de OneStock, incidents réduits)
+- [ ] Code Factory : usage de Green Code Pattern (projets audités), niveau RGAA atteint
+- [ ] ACDP : suite donnée aux POC et à la présentation à Paris
+- [ ] Clear Channel : réutilisation du prototype, nombre de sources de données intégrées
+
+### 2. Points forts du profil mis en avant (accroche, À propos, tête des réalisations)
+
+- [ ] Architecture événementielle en production (GCP, Pub/Sub, webhooks)
+- [ ] Cadrage technique et relation avec le métier
+- [ ] Responsabilité du RUN et transmission (formation des nouveaux arrivants)
+- [ ] IA au quotidien (Gemini Code Assist) : un exemple concret de gain
+- [ ] Accessibilité RGAA et numérique responsable
+- [ ] Prise de parole (présentation devant la direction)
+
+### 3. Preuves
+
+- [ ] Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)
+- [ ] Liens GitHub et README soignés pour les projets personnels
+- [ ] Certifications ou formations (ex. GCP Associate Cloud Engineer)
+
+### 4. Pour aller plus loin
+
+- [ ] Section « Comment je travaille » : 3 ou 4 principes illustrés par du vécu
+- [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
+- [ ] Projets personnels : problème, apprentissages, lien GitHub, un projet phare (section marquée « En cours de construction » en attendant)
+- [ ] « À propos » plus personnel (motivations, type d'équipe recherché, détail humain : ELOP Tour, échange avec un collège britannique)

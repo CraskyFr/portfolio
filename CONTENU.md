@@ -31,7 +31,9 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
   - Intégration avec OneStock via API REST et webhooks
   - Conception de modèles de données
   - Pair programming et revues techniques
-  - Gestion du RUN applicatif
+  - RUN : analyse et correction des anomalies fonctionnelles et techniques en production
+  - Relation avec le métier et d'autres équipes pour analyser les problèmes et construire les flux
+  - Formation des nouveaux arrivants
   - Agile Scrum
   - Utilisation de l'IA dans le développement (Gemini Code Assist)
 - **Stack** : Java, Spring Boot, Google Cloud Platform, Pub/Sub, Gemini Code Assist
@@ -42,7 +44,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 - **Contexte** : applications internes, équipe de 2 à 3 développeurs, un Product Owner, un Tech Lead et un responsable projet
 - **Projets** :
   - Green Code Pattern : audit des projets sur le numérique responsable (inclusion et accessibilité, empreinte écologique), questionnaires et tableaux
-  - SVS : site vitrine des projets de l'Innov et de la Code Factory, accessible (RGAA) et internationalisé
+  - SVS : site vitrine des projets de l'Innov et de la Code Factory, accessible (RGAA) et internationalisé. **Livré en production**, utilisé pour présenter aux clients les projets d'innovation internes
 - **Missions** :
   - Backend Java Spring Boot exposant des API RESTful sur AWS, tests JUnit et Mockito
   - Application web Angular, tests Jasmine et Karma
