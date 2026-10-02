@@ -80,10 +80,10 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 ## Étape 7 — Déploiement
 
-- [ ] GitHub Actions (build + lint)
+- [x] GitHub Actions (format, typage, build)
 - [ ] Déploiement Vercel/Netlify
 - [ ] Domaine paulbodin.fr + HTTPS
-- [ ] README propre sur le dépôt
+- [x] README propre sur le dépôt
 
 ## Étape 8 — Après la mise en ligne
 
