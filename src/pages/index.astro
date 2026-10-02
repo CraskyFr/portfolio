@@ -36,10 +36,10 @@ const neighbours = (experience: (typeof experiences)[number]) => {
     <h1 class="intro text-4xl font-bold tracking-tight sm:text-5xl" style="--delay: 40ms">
       {site.name}
     </h1>
+    <Typewriter text={site.title} class="text-muted mt-2 text-xl sm:text-2xl" delay={300} />
     <p class="intro text-accent mt-2 font-mono text-sm" style="--delay: 120ms">
       {site.location}
     </p>
-    <Typewriter text={site.title} class="text-muted mt-1 text-xl sm:text-2xl" delay={300} />
     <p class="intro mt-6 max-w-2xl text-lg leading-relaxed" style="--delay: 160ms">
       {site.tagline}
     </p>
