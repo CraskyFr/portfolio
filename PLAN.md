@@ -10,8 +10,8 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 |---|---|
 | Stack | **Astro + TypeScript + Tailwind CSS** |
 | Langue | **Français uniquement** |
-| Domaine | **paulbodin.fr** (à vérifier / réserver) |
-| Hébergement | Vercel ou Netlify (gratuit, déploiement auto depuis GitHub) |
+| Domaine | **paulbodin.fr** (libre au 02/10/2026, à réserver) |
+| Hébergement | **Vercel** (gratuit, déploiement auto depuis GitHub) |
 | Mise en avant | **Expérience professionnelle** (projets perso en secondaire) |
 | LinkedIn | https://www.linkedin.com/in/paulbodiin/ |
 
@@ -81,7 +81,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 ## Étape 7 — Déploiement
 
 - [x] GitHub Actions (format, typage, build)
-- [ ] Déploiement Vercel/Netlify
+- [x] Déploiement Vercel
 - [ ] Domaine paulbodin.fr + HTTPS
 - [x] README propre sur le dépôt
 

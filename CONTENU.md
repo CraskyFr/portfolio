@@ -12,12 +12,10 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 - **LinkedIn** : https://www.linkedin.com/in/paulbodiin/
 - **GitHub** : https://github.com/CraskyFr
 - **Téléphone** : non affiché sur le site (anti-spam), présent uniquement dans le CV téléchargeable
-- **Recherche** : poste de développeur backend Java à Nantes et alentours
 
 ## Accroche
 
-> Développeur backend Java, je conçois des API, des flux et des batchs fiables sur le cloud (GCP, AWS).
-> Basé à Nantes, je cherche à rejoindre une équipe dynamique pour concevoir des solutions utiles et durables.
+> Développeur backend Java basé à Nantes, je conçois des API, des flux et des batchs fiables sur le cloud, pensés pour être utiles et durables.
 
 ## Expériences
 
