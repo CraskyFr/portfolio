@@ -56,8 +56,7 @@ export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 export const projects = [
   {
     name: 'Template',
-    description:
-      'Test',
+    description: 'Test',
     stack: ['Java', 'Spring Boot 3', 'OpenAPI', 'Docker'],
   },
 ];
