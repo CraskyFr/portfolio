@@ -126,12 +126,12 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 
 ### 2. Points forts du profil mis en avant (accroche, À propos, tête des réalisations)
 
-- [ ] Architecture événementielle en production (GCP, Pub/Sub, webhooks)
-- [ ] Cadrage technique et relation avec le métier
-- [ ] Responsabilité du RUN et transmission (formation des nouveaux arrivants)
-- [ ] IA au quotidien (Gemini Code Assist) : un exemple concret de gain
-- [ ] Accessibilité RGAA et numérique responsable
-- [ ] Prise de parole (présentation devant la direction)
+- [x] Architecture événementielle en production (GCP, Pub/Sub, webhooks)
+- [x] Cadrage technique (accroche « Du cadrage technique au RUN… » et À propos)
+- [x] Responsabilité du RUN et transmission (formation des nouveaux arrivants)
+- [x] IA au quotidien (Gemini Code Assist) : productivité sur les tâches répétitives, analyse de code (améliorations, failles)
+- [x] Accessibilité RGAA et numérique responsable
+- [x] Prise de parole (présentation devant la direction)
 
 ### 3. Preuves
 
@@ -141,7 +141,7 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 
 ### 4. Pour aller plus loin
 
-- [ ] Section « Comment je travaille » : 3 ou 4 principes illustrés par du vécu
+- [x] Section « Comment je travaille » : 4 principes illustrés par du vécu
 - [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
 - [ ] Projets personnels : problème, apprentissages, lien GitHub, un projet phare (section marquée « En cours de construction » en attendant)
-- [ ] « À propos » plus personnel (motivations, type d'équipe recherché, détail humain : ELOP Tour, échange avec un collège britannique)
+- [ ] « À propos » plus personnel : ELOP Tour ajouté ; reste motivations, type d'équipe recherché, échange avec un collège britannique
