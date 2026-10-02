@@ -5,7 +5,7 @@ export const site = {
   description:
     'Développeur backend Java à Nantes : API, flux événementiels et batchs sur le cloud (GCP, AWS).',
   tagline:
-    'Je conçois des API, des flux et des batchs fiables sur le cloud, pensés pour être utiles et durables.',
+    'Du cadrage technique au RUN, je conçois des API et des flux événementiels fiables sur le cloud.',
   email: 'paul.bodin@hotmail.com',
   cv: '/cv_paul_bodin.pdf',
   links: {
