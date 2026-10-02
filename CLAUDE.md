@@ -9,7 +9,7 @@ Le suivi des étapes est dans `PLAN.md`, le contenu brut dans `CONTENU.md`.
 npm run dev      # serveur de dev (en arrière-plan : npx astro dev --background, puis astro dev stop)
 npm run build    # build statique dans dist/
 npm run check    # vérification TypeScript / Astro
-npm run format   # Prettier (100 caractères, quotes simples)
+npm run format   # Prettier (100 caractères, quotes simples) ; format:check pour la CI
 bash scripts/generate-images.sh  # régénère og.png, apple-touch-icon.png et favicon.ico (via Edge headless)
 ```
 
@@ -26,6 +26,7 @@ bash scripts/generate-images.sh  # régénère og.png, apple-touch-icon.png et f
 - Tout le texte du site est en français.
 - Ne jamais publier le numéro de téléphone ni d'informations confidentielles sur les missions client.
 - Les PDF sources (`Profile.pdf`, `CV_*.pdf`) à la racine sont ignorés par git.
+- Git : ne jamais commiter ni pusher. Paul commite lui-même depuis IntelliJ, sur une branche de feature (jamais directement sur `main`).
 
 ## Documentation Astro
 
