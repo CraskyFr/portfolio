@@ -72,11 +72,7 @@ export const languages = [
   { name: 'Espagnol', level: 'Intermédiaire' },
 ];
 
-export const interests = [
-  'Course à pied et tennis',
-  "ELOP Tour : relier à vélo les deux campus de l'ESIEA, de Laval à Paris",
-  'Échecs et lecture',
-];
+export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 
 export const projects = [
   {
