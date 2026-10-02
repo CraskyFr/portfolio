@@ -55,20 +55,9 @@ export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 
 export const projects = [
   {
-    name: 'CraskyApi',
+    name: 'Template',
     description:
-      "API REST de gestion d'inventaire Counter-Strike 2, conçue en approche contract-first : le contrat OpenAPI génère les interfaces des contrôleurs.",
-    stack: ['Java 24', 'Spring Boot 3', 'OpenAPI', 'PostgreSQL', 'Docker'],
-  },
-  {
-    name: 'CraskyUI',
-    description: 'Interface web de CraskyApi, en composants standalone et signals.',
-    stack: ['Angular 20', 'TypeScript'],
-  },
-  {
-    name: 'Template Spring Boot',
-    description:
-      'Socle de projet réutilisable qui fixe mes conventions : architecture en couches, contrat OpenAPI, base PostgreSQL conteneurisée.',
+      'Test',
     stack: ['Java', 'Spring Boot 3', 'OpenAPI', 'Docker'],
   },
 ];
