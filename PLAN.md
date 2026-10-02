@@ -90,3 +90,13 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 - [ ] Lien sur LinkedIn, GitHub, CV
 - [ ] Analytics respectueux de la vie privée (Plausible / Umami), optionnel
 - [ ] Mettre à jour à chaque nouvelle mission
+
+## Étape 9 — Animations
+
+Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced-motion: reduce`, contenu visible sans JavaScript, Lighthouse ≥ 95 conservé.
+
+- [x] Fondations : animation `fade-up` et décalage `--delay` dans `global.css`, respect de `prefers-reduced-motion`
+- [x] Hero : apparition en cascade (localisation, nom, accroche, boutons) et effet machine à écrire sur « Développeur Backend Java » (texte complet conservé pour le SEO et les lecteurs d'écran)
+- [x] Apparition au défilement (`IntersectionObserver`, attribut `data-reveal`) : titres de section, expériences, compétences, projets, à propos, contact
+- [x] Micro-interactions : survol des boutons, cartes et lien « étude de cas », frise qui se dessine au défilement (CSS scroll-driven), changement de thème en cercle (View Transitions)
+- [ ] Vérifications : clavier, animations réduites, sans JavaScript, mobile, clair/sombre, Lighthouse (LCP)

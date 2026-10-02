@@ -15,10 +15,30 @@ import Icon from './Icon.astro';
 <script>
   document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
     button.addEventListener('click', () => {
-      const dark = document.documentElement.classList.toggle('dark');
-      try {
-        localStorage.setItem('theme', dark ? 'dark' : 'light');
-      } catch {}
+      const toggle = () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        try {
+          localStorage.setItem('theme', dark ? 'dark' : 'light');
+        } catch {}
+      };
+
+      // Sans View Transitions ou avec mouvements réduits : bascule immédiate.
+      if (!document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        toggle();
+        return;
+      }
+
+      // Le nouveau thème s'étend en cercle depuis le bouton jusqu'au coin le plus éloigné.
+      const { left, top, width, height } = button.getBoundingClientRect();
+      const x = left + width / 2;
+      const y = top + height / 2;
+      const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      document.startViewTransition(toggle).ready.then(() => {
+        document.documentElement.animate(
+          { clipPath: [`circle(0 at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+          { duration: 450, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' },
+        );
+      });
     });
   });
 </script>
