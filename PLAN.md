@@ -144,4 +144,4 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [x] Section « Comment je travaille » : 4 principes illustrés par du vécu
 - [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
 - [ ] Projets personnels : problème, apprentissages, lien GitHub, un projet phare (section marquée « En cours de construction » en attendant)
-- [ ] « À propos » plus personnel : ELOP Tour ajouté ; reste motivations, type d'équipe recherché, échange avec un collège britannique
+- [ ] « À propos » plus personnel : motivations, échange avec un collège britannique (ELOP Tour écarté)

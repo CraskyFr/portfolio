@@ -98,7 +98,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Centres d'intérêt (section « À propos »)
 
-- Sport : course à pied, tennis, projet ELOP Tour (relier à vélo les deux campus de l'ESIEA, de Laval à Paris)
+- Sport : course à pied, tennis
 - Lecture, échecs
 - Échange avec un collège britannique
 
