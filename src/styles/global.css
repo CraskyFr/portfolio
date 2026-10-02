@@ -15,6 +15,8 @@
   --border: oklch(0.91 0.004 75);
   --accent: oklch(0.5 0.16 258);
   --accent-soft: oklch(0.95 0.025 258);
+  /* Bandes latérales autour de la « feuille » de contenu (écran large). */
+  --band: oklch(0.955 0.004 75);
   color-scheme: light;
 }
 
@@ -26,6 +28,7 @@
   --border: oklch(0.3 0.006 60);
   --accent: oklch(0.74 0.12 255);
   --accent-soft: oklch(0.28 0.05 258);
+  --band: oklch(0.135 0.004 60);
   color-scheme: dark;
 }
 
@@ -200,4 +203,24 @@
   --tw-prose-quotes: var(--fg);
   --tw-prose-quote-borders: var(--border);
   --tw-prose-code: var(--fg);
+}
+
+/* Effet feuille (écran large) : le contenu repose sur une colonne au fond normal, bordée
+   d'un filet, et les bandes latérales prennent une teinte voisine. */
+@media screen and (width >= 64rem) {
+  html {
+    background-color: var(--band);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset-block: 0;
+    left: 50%;
+    z-index: -1;
+    width: 54rem;
+    translate: -50% 0;
+    background-color: var(--bg);
+    border-inline: 1px solid var(--border);
+  }
 }
