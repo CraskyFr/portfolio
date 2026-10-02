@@ -10,7 +10,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 |---|---|
 | Stack | **Astro + TypeScript + Tailwind CSS** |
 | Langue | **Français uniquement** |
-| Domaine | **paulbodin.fr** (libre au 02/10/2026, à réserver) |
+| Domaine | **paulbodin.fr** (réservé chez OVH, DNS chez OVH) |
 | Hébergement | **Vercel** (gratuit, déploiement auto depuis GitHub) |
 | Mise en avant | **Expérience professionnelle** (projets perso en secondaire) |
 | LinkedIn | https://www.linkedin.com/in/paulbodiin/ |
@@ -82,7 +82,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 - [x] GitHub Actions (format, typage, build)
 - [x] Déploiement Vercel
-- [ ] Domaine paulbodin.fr + HTTPS
+- [x] Domaine paulbodin.fr + HTTPS (DNS chez OVH, certificat Let's Encrypt géré par Vercel)
 - [x] README propre sur le dépôt
 
 ## Étape 8 — Après la mise en ligne
@@ -100,3 +100,12 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Apparition au défilement (`IntersectionObserver`, attribut `data-reveal`) : titres de section, expériences, compétences, projets, à propos, contact
 - [x] Micro-interactions : survol des boutons, cartes et lien « étude de cas », frise qui se dessine au défilement (CSS scroll-driven), changement de thème en cercle (View Transitions)
 - [ ] Vérifications : clavier, animations réduites, sans JavaScript, mobile, clair/sombre, Lighthouse (LCP)
+
+## Étape 10 — Études de cas : contenu et ergonomie
+
+- [x] Gabarit commun : « En bref » (équipe, méthode, environnement), « Contexte et enjeux », « Ce que j'ai fait », « Résultats » (seulement quand Paul fournit des éléments, rien d'inventé)
+- [x] Lecture continue à la place des onglets : bulles en sommaire qui suivent la lecture (scrollspy), hauteur adaptée au contenu
+- [x] Carte plein écran sur mobile
+- [x] Navigation : étude plus récente / plus ancienne (boutons et flèches ← →), adresse propre `/#etude-…` (partageable, bouton retour qui ferme la carte)
+- [ ] *(optionnel)* Panneau latéral sur ordinateur, barre de progression de lecture, schéma agrandissable
+- [ ] Résultats chiffrés des missions (à fournir par Paul)

@@ -3,48 +3,58 @@ role: Développeur Backend Java
 company: Aubay
 client: Maisons du Monde — Supply
 location: Nantes
+logo: ../../assets/logos/maisons-du-monde.svg
 start: 2024-02-01
 summary: Intégration de l'OMS OneStock et refonte complète des flux supply chain sur Google Cloud Platform.
 highlights:
   - Cadrage technique de l'intégration de l'OMS OneStock
-  - Refonte des flux autour d'une architecture événementielle (Pub/Sub)
+  - Refonte des flux internes autour d'une architecture événementielle (Pub/Sub)
+  - Intégration avec OneStock via API REST et webhooks
   - Développement d'API REST, de flux et de batchs
   - Conception de modèles de données
   - Pair programming, revues techniques et gestion du RUN
 stack: [Java, Spring Boot, GCP, Pub/Sub, Gemini Code Assist]
+method: Agile Scrum
+environment:
+  [Java, Spring Boot, Google Cloud Platform, Pub/Sub, API REST, Webhooks, Gemini Code Assist]
 featured: true
 ---
 
 import ArchitectureDiagram from '../../components/ArchitectureDiagram.astro';
 
-## Contexte
+## Contexte et enjeux
 
 Maisons du Monde a choisi d'intégrer **OneStock**, un OMS (Order Management System), pour orchestrer ses commandes entre ses différents canaux de vente et ses sources de stock. J'interviens au sein du pôle Supply, en charge des applications liées au transport et au stock.
 
-L'arrivée d'un OMS change la circulation de l'information : les flux existants entre les systèmes devaient être repensés de bout en bout.
-
-## Enjeux
+L'arrivée d'un OMS change la circulation de l'information : les flux existants entre les systèmes devaient être repensés de bout en bout. Avec trois exigences :
 
 - **Refondre tous les flux** concernés sans interrompre l'activité existante.
-- **Fiabiliser les échanges** entre des systèmes hétérogènes : aucun message perdu, des reprises possibles en cas d'erreur.
+- **Fiabiliser les échanges** entre des systèmes hétérogènes : aucun message perdu, des reprises possibles en cas d'erreur.
 - **Découpler les applications** pour pouvoir faire évoluer chaque système indépendamment.
 
 ## Architecture
 
-Les échanges reposent sur une architecture événementielle sur Google Cloud Platform. Les systèmes publient leurs événements dans des **topics Pub/Sub**, consommés par des services Java qui les transforment et les transmettent à l'OMS, et inversement.
+Les échanges reposent sur une architecture événementielle sur Google Cloud Platform. En interne, les systèmes de Maisons du Monde publient leurs événements dans des **topics Pub/Sub**, consommés par des services Java / Spring Boot.
 
-<ArchitectureDiagram />
+Ces services font le lien avec OneStock : ils transmettent les données à l'OMS en appelant ses **API REST**, et reçoivent ses notifications via des **webhooks**, qu'ils republient ensuite dans les topics internes.
 
-Ce découplage par messages permet de rejouer un flux en cas d'incident, d'absorber les pics de charge et d'ajouter un nouveau consommateur sans modifier les producteurs.
+<ArchitectureDiagram
+  steps={[
+    { title: 'Systèmes Maisons du Monde', detail: 'Canaux de vente, stocks, transport' },
+    { title: 'Pub/Sub', detail: 'Topics internes', accent: true },
+    { title: 'Services de flux', detail: 'Java / Spring Boot sur GCP' },
+    { title: 'OMS OneStock', detail: 'Orchestration des commandes' },
+  ]}
+  links={{ 3: { out: 'API REST', in: 'Webhooks' } }}
+  caption="Vue simplifiée des échanges : événements Pub/Sub en interne, API REST et webhooks avec OneStock."
+/>
 
-## Mon rôle
+En interne, ce découplage par messages permet de rejouer un flux en cas d'incident, d'absorber les pics de charge et d'ajouter un nouveau consommateur sans modifier les producteurs.
 
-- **Cadrage technique** : participation à la conception des flux et des modèles de données.
+## Ce que j'ai fait
+
+- **Cadrage technique** : participation à la conception des flux et des modèles de données.
 - **Développement** des services de flux, des API REST et des batchs en Java / Spring Boot.
-- **Qualité** : pair programming et revues techniques au sein de l'équipe.
-- **RUN** : suivi de la production et traitement des incidents.
-- **IA dans le développement** : utilisation de Gemini Code Assist au quotidien.
-
-## Stack
-
-Java, Spring Boot, Google Cloud Platform, Pub/Sub, Gemini Code Assist. Projet mené en Agile Scrum.
+- **Qualité** : pair programming et revues techniques au sein de l'équipe.
+- **RUN** : suivi de la production et traitement des incidents.
+- **IA dans le développement** : utilisation de Gemini Code Assist au quotidien.
