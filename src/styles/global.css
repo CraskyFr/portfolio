@@ -71,32 +71,6 @@
   }
 }
 
-/* Sommaire latéral de la page d'accueil (voir PageToc) : fixe dans la bande gauche, aligné
-   sur le contenu, affiché seulement quand la bande est assez large. */
-@layer components {
-  .page-toc {
-    display: none;
-  }
-
-  @media (width >= 80rem) {
-    .page-toc {
-      position: fixed;
-      top: 8rem;
-      left: calc((100vw - 48rem) / 2 - 15rem);
-      display: block;
-      width: 12rem;
-    }
-  }
-
-  .page-toc-link {
-    @apply text-muted hover:text-fg -ml-px block border-l border-transparent py-1 pl-4 text-sm;
-  }
-
-  .page-toc-link[aria-current='true'] {
-    @apply border-accent text-fg font-medium;
-  }
-}
-
 /* Sommaire en bulles de la carte d'étude de cas (voir ExperienceItem) : la bulle de la
    section en cours de lecture est pleine. */
 @layer components {
