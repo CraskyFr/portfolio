@@ -9,7 +9,16 @@ import Section from '../components/Section.astro';
 import Tag from '../components/Tag.astro';
 import Typewriter from '../components/Typewriter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { about, domains, education, interests, languages, projects, skills } from '../data/profile';
+import {
+  about,
+  domains,
+  education,
+  interests,
+  languages,
+  principles,
+  projects,
+  skills,
+} from '../data/profile';
 import { site } from '../data/site';
 import photo from '../assets/photo/paul-bodin.jpg';
 
@@ -119,6 +128,22 @@ const neighbours = (experience: (typeof experiences)[number]) => {
         <dd>{domains.join(' · ')}</dd>
       </div>
     </dl>
+  </Section>
+
+  <Section id="methode" title="Comment je travaille">
+    <ol class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      {principles.map((principle, index) => (
+        <li data-reveal class="flex gap-4" style={`--delay: ${(index % 2) * 100}ms`}>
+          <span aria-hidden="true" class="text-accent font-mono text-sm font-semibold">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <h3 class="font-semibold">{principle.title}</h3>
+            <p class="text-muted mt-1 leading-relaxed">{principle.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
   </Section>
 
   <Section id="projets" title="Projets personnels" status="En cours de construction">

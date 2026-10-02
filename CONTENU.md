@@ -15,7 +15,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Accroche
 
-> Je conçois des API, des flux et des batchs fiables sur le cloud, pensés pour être utiles et durables.
+> Du cadrage technique au RUN, je conçois des API et des flux événementiels fiables sur le cloud.
 
 ## Expériences
 
@@ -34,7 +34,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
   - RUN : diagnostic et correction des incidents de production, fonctionnels comme techniques
   - Formation des nouveaux arrivants
   - Agile Scrum
-  - Utilisation de l'IA dans le développement (Gemini Code Assist)
+  - Utilisation de l'IA dans le développement (Gemini Code Assist) : gain de productivité sur les tâches répétitives (configuration…) et analyse de code pour repérer des améliorations ou des failles
 - **Stack** : Java, Spring Boot, Google Cloud Platform, Pub/Sub, Gemini Code Assist
 
 ### Développeur Full Stack Java/Angular — Aubay Code Factory
@@ -98,7 +98,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Centres d'intérêt (section « À propos »)
 
-- Sport : course à pied, tennis, projet ELOP Tour
+- Sport : course à pied, tennis, projet ELOP Tour (relier à vélo les deux campus de l'ESIEA, de Laval à Paris)
 - Lecture, échecs
 - Échange avec un collège britannique
 
