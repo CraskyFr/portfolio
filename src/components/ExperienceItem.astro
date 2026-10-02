@@ -90,7 +90,8 @@ const siblings = [
         aria-haspopup="dialog"
         class="group text-accent mt-5 inline-flex items-center gap-1 text-sm font-medium hover:underline"
       >
-        Lire l'étude de cas
+        En savoir plus
+        <span class="sr-only"> sur la mission {titleOf(experience)}</span>
         <span
           aria-hidden="true"
           class="inline-block transition-transform motion-safe:group-hover:translate-x-1"
@@ -126,7 +127,7 @@ const siblings = [
           <a
             href={caseStudyUrl}
             class="text-muted hover:text-fg rounded-md p-2 transition-colors"
-            aria-label="Ouvrir l'étude de cas en pleine page"
+            aria-label="Ouvrir le détail de la mission en pleine page"
             title="Ouvrir en pleine page"
           >
             <Icon name="expand" />
@@ -136,7 +137,7 @@ const siblings = [
             data-close
             autofocus
             class="text-muted hover:text-fg rounded-md p-2 transition-colors"
-            aria-label="Fermer l'étude de cas"
+            aria-label="Fermer le détail de la mission"
             title="Fermer"
           >
             <Icon name="close" />
@@ -144,7 +145,7 @@ const siblings = [
         </div>
       </div>
       <nav
-        aria-label="Sommaire de l'étude de cas"
+        aria-label="Sommaire de la mission"
         data-case-nav
         class="-mx-6 mt-5 flex gap-2 overflow-x-auto px-6 pb-4 sm:-mx-10 sm:px-10"
       >
@@ -164,7 +165,7 @@ const siblings = [
 
       {siblings.length > 0 && (
         <nav
-          aria-label="Autres études de cas"
+          aria-label="Autres missions"
           class="border-border mt-12 grid gap-3 border-t pt-8 sm:grid-cols-2"
         >
           {siblings.map(({ entry, label, direction }) => (
