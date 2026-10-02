@@ -77,9 +77,9 @@ export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 // Projets personnels ; `url` : dépôt GitHub public, affiché en lien sur la carte.
 export const projects: { name: string; description: string; stack: string[]; url?: string }[] = [
   {
-    name: 'Ce portfolio',
+    name: 'Portfolio',
     description:
-      'Site statique en Astro et TypeScript strict, au contenu typé et validé. Intégration continue (format, typage, build), déploiement continu sur Vercel, Lighthouse à 100 sur les quatre catégories et accessibilité soignée.',
+      'Le site que vous parcourez, conçu et développé de A à Z pour être rapide, accessible et facile à faire évoluer.',
     stack: ['Astro 7', 'TypeScript', 'Tailwind CSS 4', 'GitHub Actions', 'Vercel'],
     url: 'https://github.com/CraskyFr/portfolio',
   },
