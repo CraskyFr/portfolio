@@ -1,17 +1,42 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import CaseStudy from './CaseStudy.astro';
+import Icon from './Icon.astro';
 import Tag from './Tag.astro';
 
+type Experience = CollectionEntry<'experiences'>;
+
 interface Props {
-  experience: CollectionEntry<'experiences'>;
+  experience: Experience;
+  /** Charge le logo immédiatement (expérience visible dès l'ouverture de la page). */
+  eager?: boolean;
+  /** Études de cas voisines dans la frise, pour passer de l'une à l'autre depuis la carte. */
+  newer?: Experience;
+  older?: Experience;
 }
 
-const { id, data } = Astro.props.experience;
+const { experience, eager = false, newer, older } = Astro.props;
+const { id, data } = experience;
 const month = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
 const period = `${month.format(data.start)} – ${data.end ? month.format(data.end) : "aujourd'hui"}`;
 const startYear = data.start.getFullYear();
 const endYear = data.end?.getFullYear();
 const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — ${endYear ?? 'auj.'}`;
+const caseStudyUrl = `/experiences/${id}/`;
+const dialogId = `etude-${id}`;
+const titleOf = (entry: Experience) => entry.data.client ?? entry.data.company;
+
+// Sommaire de la carte : le bloc « En bref », puis les sections (h2) de l'étude de cas.
+const { headings } = await render(experience);
+const sections = [
+  { slug: 'en-bref', text: 'En bref' },
+  ...headings.filter((heading) => heading.depth === 2),
+];
+const siblings = [
+  newer && { entry: newer, label: '← Plus récente', direction: 'newer' },
+  older && { entry: older, label: 'Plus ancienne →', direction: 'older' },
+].filter((sibling) => !!sibling);
 ---
 
 <article class="relative grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
@@ -19,12 +44,26 @@ const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — $
     aria-hidden="true"
     class="bg-accent ring-bg absolute top-2 left-36 hidden size-2 -translate-x-1/2 rounded-full ring-4 sm:block"
   ></span>
-  <p class="text-muted font-mono text-sm sm:pt-1">
-    <span class="sr-only">{period}</span>
-    <span aria-hidden="true" title={period}>
-      {shortPeriod}
-    </span>
-  </p>
+  <div class="flex items-center gap-3 sm:w-28 sm:flex-col">
+    {data.logo && (
+      <span class="size-16 shrink-0 overflow-hidden rounded-lg">
+        {/* Décoratif : le nom de l'entreprise figure déjà dans le texte. */}
+        <Image
+          src={data.logo}
+          alt=""
+          width={128}
+          loading={eager ? 'eager' : 'lazy'}
+          class="size-full object-contain"
+        />
+      </span>
+    )}
+    <p class="text-muted font-mono text-sm">
+      <span class="sr-only">{period}</span>
+      <span aria-hidden="true" title={period}>
+        {shortPeriod}
+      </span>
+    </p>
+  </div>
   <div>
     <h3 class="text-lg font-semibold">{data.role}</h3>
     <p class="text-muted">
@@ -45,7 +84,10 @@ const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — $
     </ul>
     {data.featured && (
       <a
-        href={`/experiences/${id}/`}
+        href={caseStudyUrl}
+        data-case-study={dialogId}
+        data-case-origin
+        aria-haspopup="dialog"
         class="group text-accent mt-5 inline-flex items-center gap-1 text-sm font-medium hover:underline"
       >
         Lire l'étude de cas
@@ -59,3 +101,252 @@ const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — $
     )}
   </div>
 </article>
+
+{data.featured && (
+  <dialog
+    id={dialogId}
+    data-case-dialog
+    aria-labelledby={`${dialogId}-titre`}
+    class="bg-surface text-fg border-border m-auto max-h-[min(92vh,64rem)] w-[min(56rem,calc(100%-2rem))] max-w-none overflow-hidden rounded-xl border p-0 shadow-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm dark:backdrop:bg-neutral-950/70 open:flex open:flex-col max-sm:h-dvh max-sm:max-h-none max-sm:w-full max-sm:rounded-none max-sm:border-0"
+  >
+    <div class="border-border shrink-0 border-b px-6 pt-5 sm:px-10 sm:pt-7">
+      <div class="flex items-start justify-between gap-4">
+        <div class="min-w-0">
+          <p class="text-accent font-mono text-sm">
+            {period} · {data.location}
+          </p>
+          <h2 id={`${dialogId}-titre`} class="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+            {titleOf(experience)}
+          </h2>
+          <p class="text-muted mt-1">
+            {data.role} · {data.company}
+          </p>
+        </div>
+        <div class="-mt-1 -mr-2 flex shrink-0 gap-1">
+          <a
+            href={caseStudyUrl}
+            class="text-muted hover:text-fg rounded-md p-2 transition-colors"
+            aria-label="Ouvrir l'étude de cas en pleine page"
+            title="Ouvrir en pleine page"
+          >
+            <Icon name="expand" />
+          </a>
+          <button
+            type="button"
+            data-close
+            autofocus
+            class="text-muted hover:text-fg rounded-md p-2 transition-colors"
+            aria-label="Fermer l'étude de cas"
+            title="Fermer"
+          >
+            <Icon name="close" />
+          </button>
+        </div>
+      </div>
+      <nav
+        aria-label="Sommaire de l'étude de cas"
+        data-case-nav
+        class="-mx-6 mt-5 flex gap-2 overflow-x-auto px-6 pb-4 sm:-mx-10 sm:px-10"
+      >
+        {sections.map((section) => (
+          <button type="button" class="case-pill" data-target={section.slug}>
+            {section.text}
+          </button>
+        ))}
+      </nav>
+    </div>
+
+    <div
+      data-case-body
+      class="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-8 sm:px-10"
+    >
+      <CaseStudy experience={experience} header={false} />
+
+      {siblings.length > 0 && (
+        <nav
+          aria-label="Autres études de cas"
+          class="border-border mt-12 grid gap-3 border-t pt-8 sm:grid-cols-2"
+        >
+          {siblings.map(({ entry, label, direction }) => (
+            <a
+              href={`/experiences/${entry.id}/`}
+              data-case-study={`etude-${entry.id}`}
+              data-case-sibling={direction}
+              class:list={[
+                'border-border hover:border-accent group rounded-lg border p-4 transition-colors',
+                direction === 'older' && 'sm:col-start-2 sm:text-right',
+              ]}
+            >
+              <span class="text-muted block text-sm">{label}</span>
+              <span class="group-hover:text-accent mt-1 block font-semibold transition-colors">
+                {titleOf(entry)}
+              </span>
+            </a>
+          ))}
+        </nav>
+      )}
+    </div>
+  </dialog>
+)}
+
+<script>
+  // Études de cas en carte. Sans JS, ou en Ctrl/Cmd+clic, les liens mènent aux pages dédiées.
+  // L'adresse suit la carte ouverte (/#etude-…) : lien partageable, et le bouton retour la ferme.
+  const dialogs = new Map(
+    [...document.querySelectorAll<HTMLDialogElement>('dialog[data-case-dialog]')].map((dialog) => [
+      dialog.id,
+      dialog,
+    ]),
+  );
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  // Vrai si l'ouverture a ajouté une entrée d'historique, à retirer à la fermeture.
+  let pushedEntry = false;
+
+  const openDialog = () =>
+    [...dialogs.values()].find((dialog) => dialog.open) as HTMLDialogElement | undefined;
+
+  const show = (dialog: HTMLDialogElement, updateHistory: boolean) => {
+    const current = openDialog();
+    if (current && current !== dialog) {
+      // Passage d'une étude à l'autre : on ferme sans toucher à l'historique.
+      current.dataset.switching = '';
+      current.close();
+    }
+    if (!dialog.open) dialog.showModal();
+    // Retour en haut, puis mesure des sections pour le sommaire.
+    const body = dialog.querySelector('[data-case-body]');
+    body?.scrollTo({ top: 0 });
+    dialog.dispatchEvent(new Event('case-open'));
+
+    const hash = `#${dialog.id}`;
+    if (updateHistory && location.hash !== hash) {
+      // Passage d'une étude à l'autre, ou carte ouverte par un lien direct : on remplace.
+      if (pushedEntry || current) history.replaceState(null, '', hash);
+      else {
+        history.pushState(null, '', hash);
+        pushedEntry = true;
+      }
+    }
+  };
+
+  // Liens de la frise et liens vers les études voisines.
+  document.querySelectorAll<HTMLAnchorElement>('[data-case-study]').forEach((link) => {
+    const dialog = dialogs.get(link.dataset.caseStudy ?? '');
+    if (!dialog) return;
+    link.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      event.preventDefault();
+      show(dialog, true);
+    });
+  });
+
+  for (const dialog of dialogs.values()) {
+    const body = dialog.querySelector<HTMLElement>('[data-case-body]');
+    const pills = [...dialog.querySelectorAll<HTMLButtonElement>('[data-case-nav] [data-target]')];
+    if (!body) continue;
+    const targetOf = (pill: HTMLButtonElement) =>
+      body.querySelector<HTMLElement>(`[id="${CSS.escape(pill.dataset.target ?? '')}"]`);
+
+    // Sommaire : la bulle de la section en cours de lecture s'allume. Les positions des sections
+    // sont mesurées à l'ouverture et au redimensionnement ; pendant le défilement, on ne fait que
+    // comparer des nombres, et le DOM n'est modifié que lorsque la section active change.
+    let offsets: number[] = [];
+    let active = -1;
+    const measure = () => {
+      const bodyTop = body.getBoundingClientRect().top - body.scrollTop;
+      offsets = pills.map((pill) => (targetOf(pill)?.getBoundingClientRect().top ?? 0) - bodyTop);
+    };
+    const highlight = () => {
+      const position = body.scrollTop + 96;
+      const atBottom = body.scrollTop + body.clientHeight >= body.scrollHeight - 4;
+      let next = 0;
+      offsets.forEach((offset, index) => {
+        if (offset <= position) next = index;
+      });
+      if (atBottom) next = pills.length - 1;
+      if (next === active) return;
+      pills[active]?.removeAttribute('aria-current');
+      pills[next]?.setAttribute('aria-current', 'true');
+      pills[next]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      active = next;
+    };
+    let frame = 0;
+    body.addEventListener(
+      'scroll',
+      () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(highlight);
+      },
+      { passive: true },
+    );
+    dialog.addEventListener('case-open', () => {
+      measure();
+      active = -1;
+      highlight();
+    });
+    new ResizeObserver(() => {
+      if (dialog.open) measure();
+    }).observe(body);
+
+    // Clic sur une bulle : défilement jusqu'à la section.
+    for (const pill of pills) {
+      pill.addEventListener('click', () => {
+        const target = targetOf(pill);
+        if (!target) return;
+        const top =
+          target.getBoundingClientRect().top - body.getBoundingClientRect().top + body.scrollTop;
+        body.scrollTo({ top: top - 24, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      });
+    }
+
+    // Flèches ← → : étude plus récente / plus ancienne (hors sommaire, qui défile lui-même).
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      if ((event.target as HTMLElement).closest('[data-case-nav]')) return;
+      const direction = event.key === 'ArrowLeft' ? 'newer' : 'older';
+      dialog.querySelector<HTMLAnchorElement>(`[data-case-sibling="${direction}"]`)?.click();
+    });
+
+    dialog.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
+    // Clic sur le fond assombri, en dehors de la carte : fermeture. Échap est géré nativement.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener('close', () => {
+      if (dialog.dataset.switching !== undefined) {
+        delete dialog.dataset.switching;
+        return;
+      }
+      // Fermeture définitive : on retire l'adresse de la carte et on revient à son lien.
+      if (location.hash === `#${dialog.id}`) {
+        if (pushedEntry) history.back();
+        else history.replaceState(null, '', location.pathname + location.search);
+      }
+      pushedEntry = false;
+      document
+        .querySelector<HTMLElement>(`[data-case-origin][data-case-study="${dialog.id}"]`)
+        ?.focus();
+    });
+  }
+
+  // Bouton retour / avant du navigateur.
+  addEventListener('popstate', () => {
+    const target = dialogs.get(location.hash.slice(1));
+    if (target) {
+      show(target, false);
+      return;
+    }
+    const current = openDialog();
+    if (current) {
+      pushedEntry = false; // l'entrée vient d'être retirée par le navigateur
+      current.close();
+    }
+  });
+
+  // Lien direct vers une étude de cas (/#etude-…).
+  const initial = dialogs.get(location.hash.slice(1));
+  if (initial) show(initial, false);
+</script>
