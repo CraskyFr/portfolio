@@ -136,12 +136,12 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 ### 3. Preuves
 
 - [ ] Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)
-- [ ] Liens GitHub et README soignés pour les projets personnels
+- [x] Lien GitHub sur la carte projet (dépôt public du portfolio) ; README des futurs projets à soigner
 - [ ] Certifications ou formations (ex. GCP Associate Cloud Engineer)
 
 ### 4. Pour aller plus loin
 
 - [x] Section « Comment je travaille » : 4 principes illustrés par du vécu
 - [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
-- [ ] Projets personnels : problème, apprentissages, lien GitHub, un projet phare (section marquée « En cours de construction » en attendant)
+- [x] Projets personnels : ce portfolio en projet phare, avec lien GitHub (CraskyApi et CraskyUI à ajouter une fois aboutis)
 - [ ] « À propos » plus personnel : motivations, échange avec un collège britannique (ELOP Tour écarté)
