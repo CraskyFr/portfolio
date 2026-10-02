@@ -1,0 +1,35 @@
+---
+// Effet machine à écrire. Le texte complet reste dans le HTML : visible sans JS,
+// lu d'un bloc par les lecteurs d'écran (sr-only) et indexé normalement.
+interface Props {
+  text: string;
+  class?: string;
+  /** Délai avant la première lettre, en millisecondes. */
+  delay?: number;
+}
+
+const { text, class: className, delay = 250 } = Astro.props;
+---
+
+<p class={className}>
+  <span class="sr-only">{text}</span>
+  <span aria-hidden="true" class="typewriter">
+    {text}
+  </span>
+  <script is:inline define:vars={{ delay }}>
+    (() => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const typed = document.currentScript.parentElement.querySelector('.typewriter');
+      const text = typed.textContent;
+      let length = 0;
+      typed.textContent = '';
+      typed.dataset.typing = '';
+      const type = () => {
+        typed.textContent = text.slice(0, ++length);
+        if (length < text.length) setTimeout(type, 55);
+        else setTimeout(() => delete typed.dataset.typing, 2500);
+      };
+      setTimeout(type, delay);
+    })();
+  </script>
+</p>
