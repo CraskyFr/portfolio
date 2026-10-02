@@ -79,7 +79,7 @@ export const projects: { name: string; description: string; stack: string[]; url
   {
     name: 'Portfolio',
     description:
-      'Site statique conçu et développé de bout en bout : contenu typé et validé, intégration et déploiement continus, performances (Lighthouse 100) et accessibilité soignées.',
+      'Site développé en intégration et déploiement continus, performances (Lighthouse 100) et accessibilité prises en compte.',
     stack: ['Astro 7', 'TypeScript', 'Tailwind CSS 4', 'GitHub Actions', 'Vercel'],
     url: 'https://github.com/CraskyFr/portfolio',
   },
