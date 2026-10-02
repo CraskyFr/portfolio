@@ -1,0 +1,62 @@
+---
+// Décor des bandes latérales (écran large) : extraits de code génériques en filigrane.
+// Purement décoratif : ignoré des lecteurs d'écran, des extraits Google et de l'impression.
+const left = `@RestController
+@RequestMapping("/api/orders")
+class OrderController {
+
+  private final OrderService service;
+
+  @GetMapping("/{id}")
+  ResponseEntity<OrderDto> get(@PathVariable String id) {
+    return ResponseEntity.ok(service.find(id));
+  }
+}
+
+@Component
+class StockListener {
+
+  @ServiceActivator(inputChannel = "stockEvents")
+  void onEvent(StockEvent event) {
+    repository.save(mapper.toEntity(event));
+  }
+}
+
+@Scheduled(cron = "0 0 2 * * *")
+void nightlyBatch() {
+  exporter.run(LocalDate.now().minusDays(1));
+}`;
+
+const right = `spring:
+  application:
+    name: flux-service
+  cloud:
+    gcp:
+      pubsub:
+        subscriber:
+          executor-threads: 4
+
+POST /api/webhooks/orders   202
+{
+  "orderId": "A-1042",
+  "status": "SHIPPED",
+  "lines": 3
+}
+
+SELECT sku, SUM(quantity)
+  FROM stock_movements
+ WHERE created_at > :since
+ GROUP BY sku;
+
+✓ 248 tests passed
+✓ build 12.4s`;
+---
+
+<div
+  aria-hidden="true"
+  data-nosnippet
+  class="code-bands pointer-events-none select-none print:hidden"
+>
+  <pre class="code-band code-band-left">{left}</pre>
+  <pre class="code-band code-band-right"><span class="inline-block text-left">{right}</span></pre>
+</div>
