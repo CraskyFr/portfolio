@@ -1,0 +1,52 @@
+---
+role: Développeur Full Stack Node/React
+company: Clear Channel France
+location: Paris
+logo: ../../assets/logos/clear-channel.svg
+start: 2022-05-01
+end: 2022-09-01
+summary: Prototype d'un outil d'analyse de données publiques externes, au service de l'affichage publicitaire.
+highlights:
+  - API Node.js alimentant une application React
+  - Carte interactive Leaflet et tableaux de données
+  - Collecte automatisée des données de trafic en temps réel, via une tâche planifiée sur AWS
+  - Modèles de données NoSQL sur MongoDB Atlas
+stack: [React, Node.js, Leaflet, TomTom API, MongoDB, AWS]
+team: Seul développeur, avec un Product Owner et un architecte logiciel
+method: Agile Kanban, revues de code
+environment: [React, Node.js, Leaflet, API TomTom, MongoDB Atlas, AWS, Docker, Jira, Confluence]
+featured: true
+---
+
+import ArchitectureDiagram from '../../components/ArchitectureDiagram.astro';
+
+## Contexte et enjeux
+
+Clear Channel France est un acteur de l'affichage publicitaire. Le projet consistait à **prototyper un outil d'analyse de données publiques externes**, accessibles au travers d'API, en complément des données internes.
+
+- **Collecter en continu** des données externes, comme le trafic en temps réel, sans intervention manuelle.
+- **Réunir** ces données et les données internes dans une même base.
+- **Les rendre exploitables** : une carte et des tableaux plutôt que des données brutes.
+
+## Architecture
+
+Une tâche planifiée hébergée sur **AWS** interroge régulièrement les API externes, dont l'API TomTom pour le trafic, et stocke les données dans **MongoDB Atlas** avec les données internes. Une **API Node.js** les expose ensuite à l'application **React**.
+
+<ArchitectureDiagram
+  direction="forward"
+  steps={[
+    { title: 'API externes', detail: 'Trafic temps réel (TomTom)' },
+    { title: 'Tâche planifiée', detail: 'Script JavaScript sur AWS', accent: true },
+    { title: 'MongoDB Atlas', detail: 'Données externes et internes' },
+    { title: 'API Node.js', detail: 'Données pour le front' },
+    { title: 'Application React', detail: 'Carte Leaflet et tableaux' },
+  ]}
+  caption="Vue simplifiée du flux de données, de la collecte à l'affichage."
+/>
+
+## Ce que j'ai fait
+
+- **Backend** Node.js : API répondant aux besoins des fonctionnalités du front.
+- **Front** React : affichage des données sur une **carte interactive Leaflet** et dans des tableaux.
+- **Collecte automatisée** : script JavaScript hébergé sur AWS et exécuté par une tâche planifiée (cron), qui récupère les données de trafic en temps réel.
+- **Modélisation** des données NoSQL dans MongoDB Atlas.

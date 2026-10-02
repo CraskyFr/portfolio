@@ -1,15 +1,66 @@
 ---
 role: Développeur Full Stack Java/Angular
 company: Aubay
-client: Code Factory — SVS
+client: Code Factory
 location: Nantes
+logo: ../../assets/logos/aubay.svg
 start: 2023-09-01
 end: 2024-02-01
-summary: Sites vitrines présentant les projets internes, conçus dans le respect du RGAA.
+summary: Deux applications internes, un outil d'audit de numérique responsable puis un site vitrine des projets, conforme au RGAA.
 highlights:
-  - Backend Java Spring Boot exposant des API RESTful sur AWS
-  - Application web Angular avec formulaires
-  - Accessibilité conforme au RGAA
-  - Pilotage de projet en Agile Scrum
-stack: [Java, Spring Boot, Angular, AWS]
+  - Green Code Pattern, outil d'audit des projets sur le numérique responsable
+  - SVS, site vitrine des projets internes, accessible (RGAA) et internationalisé
+  - Backend Java Spring Boot exposant des API RESTful sur AWS, testé avec JUnit et Mockito
+  - Application Angular testée avec Jasmine et Karma
+  - Intégration continue avec Jenkins et SonarQube
+stack: [Java, Spring Boot, Angular, PostgreSQL, Jenkins, AWS]
+team: 2 à 3 développeurs, un Product Owner, un Tech Lead et un responsable projet
+method: Agile Scrum
+environment:
+  [
+    Java 17,
+    Spring Boot,
+    Hibernate,
+    Maven,
+    Swagger,
+    JUnit,
+    Mockito,
+    Angular,
+    Jasmine,
+    Karma,
+    PostgreSQL,
+    Docker,
+    Jenkins,
+    SonarQube,
+    AWS,
+    Jira,
+  ]
+featured: true
 ---
+
+## Contexte et enjeux
+
+La **Code Factory** d'Aubay développe des applications internes, avec une organisation de projet complète : un Product Owner, un Tech Lead, un responsable projet et une équipe de développeurs. J'ai travaillé sur deux projets successifs :
+
+- **Green Code Pattern**, une application d'**audit des projets sur le plan du numérique responsable**. Elle évalue un projet sur deux axes, l'inclusion et l'accessibilité d'une part, la réduction de l'empreinte écologique d'autre part.
+- **SVS**, une application qui **présente les projets de l'Innov et de la Code Factory**, avec un accent sur l'accessibilité et l'internationalisation.
+
+## Ce que j'ai fait
+
+### Green Code Pattern
+
+- **Backend** Java Spring Boot exposant des API RESTful, couvert par des tests unitaires JUnit et Mockito.
+- **Front** Angular : questionnaires et tableaux de synthèse, testés avec Jasmine et Karma.
+- **Données** dans PostgreSQL.
+
+### SVS
+
+- **Accessibilité** conforme au RGAA (Référentiel général d'amélioration de l'accessibilité).
+- **Internationalisation** de l'application.
+- **Backend** Java Spring Boot (API RESTful) et **front** Angular avec formulaires, sur la même base technique que Green Code Pattern.
+
+### Sur les deux projets
+
+- **Tests unitaires** côté back (JUnit, Mockito) et côté front (Jasmine, Karma).
+- **Intégration continue** avec Jenkins et analyse de code avec SonarQube.
+- **Rituels Scrum** : sprint planning, daily, sprint review, planning poker et affinage du backlog.

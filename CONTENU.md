@@ -15,7 +15,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ## Accroche
 
-> Développeur backend Java basé à Nantes, je conçois des API, des flux et des batchs fiables sur le cloud, pensés pour être utiles et durables.
+> Je conçois des API, des flux et des batchs fiables sur le cloud, pensés pour être utiles et durables.
 
 ## Expériences
 
@@ -27,7 +27,8 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 - **Missions** :
   - Cadrage technique de l'intégration de l'OMS
   - Développement des nouveaux flux, API REST et batchs
-  - Architecture événementielle sur GCP avec des topics Pub/Sub
+  - Architecture événementielle sur GCP avec des topics Pub/Sub (flux internes)
+  - Intégration avec OneStock via API REST et webhooks
   - Conception de modèles de données
   - Pair programming et revues techniques
   - Gestion du RUN applicatif
@@ -35,37 +36,45 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
   - Utilisation de l'IA dans le développement (Gemini Code Assist)
 - **Stack** : Java, Spring Boot, Google Cloud Platform, Pub/Sub, Gemini Code Assist
 
-### Développeur Full Stack Java/Angular — Aubay Code Factory (SVS)
+### Développeur Full Stack Java/Angular — Aubay Code Factory
 - **Dates** : septembre 2023 – février 2024
 - **Lieu** : Nantes
+- **Contexte** : applications internes, équipe de 2 à 3 développeurs, un Product Owner, un Tech Lead et un responsable projet
+- **Projets** :
+  - Green Code Pattern : audit des projets sur le numérique responsable (inclusion et accessibilité, empreinte écologique), questionnaires et tableaux
+  - SVS : site vitrine des projets de l'Innov et de la Code Factory, accessible (RGAA) et internationalisé
 - **Missions** :
-  - Sites vitrines présentant les projets internes
-  - Backend Java Spring Boot exposant des API RESTful sur AWS
-  - Application web Angular avec formulaires
-  - Respect du RGAA (accessibilité)
-  - Pilotage de projet en Agile Scrum
-- **Stack** : Java, Spring Boot, Angular, AWS
+  - Backend Java Spring Boot exposant des API RESTful sur AWS, tests JUnit et Mockito
+  - Application web Angular, tests Jasmine et Karma
+  - Base PostgreSQL
+  - Intégration continue avec Jenkins et SonarQube
+  - Agile Scrum (sprint planning, daily, sprint review, planning poker, affinage du backlog)
+- **Stack** : Java 17, Spring Boot, Hibernate, Maven, Swagger, JUnit, Mockito, Angular, Jasmine, Karma, PostgreSQL, Docker, Jenkins, SonarQube, AWS, Jira
 
 ### Développeur Full Stack Java/Angular — Aubay Innov (ACDP)
 - **Dates** : avril 2023 – septembre 2023
 - **Lieu** : Nantes
-- **Contexte** : Advanced Customer Data Platform, plateforme de données clients
+- **Contexte** : Advanced Customer Data Platform, segmentation de la clientèle d'une marque selon sa valeur, pour cibler les campagnes marketing (nom de la marque confidentiel, ne pas publier). Équipe : 2 développeurs, 4 data analysts, un Product Owner et un responsable
 - **Missions** :
-  - Backend Java Spring Boot exposant des API RESTful sur AWS
-  - Application web Angular affichant les données clients (tableaux, graphiques)
-  - Participation à des POC et à des journées de démonstration à Paris
+  - Backend Java Spring Boot exposant des API RESTful sur AWS, tests JUnit et Mockito
+  - Application web Angular affichant les données clients (tableaux, graphiques ng2-charts)
+  - MongoDB pour les données de ventes, PostgreSQL pour l'authentification
+  - POC de segmentation client : géographique, comportementale, technologique
+  - Présentation du projet à Paris devant la direction et une centaine de personnes
   - Agile Scrum
-- **Stack** : Java, Spring Boot, Angular, AWS
+- **Stack** : Java 17, Spring Boot, Maven, Swagger, JUnit, Mockito, Angular, ng2-charts, MongoDB, PostgreSQL, Docker, Docker Compose, AWS, Jira
 
 ### Développeur Full Stack Node/React — Clear Channel France
 - **Dates** : mai 2022 – septembre 2022
 - **Lieu** : Paris
-- **Contexte** : prototype d'un outil d'analyse de données (secteur publicité)
+- **Contexte** : prototype d'un outil d'analyse de données publiques externes (secteur publicité). Équipe : 1 développeur, un Product Owner et un architecte logiciel
 - **Missions** :
-  - Application web React / Node.js
-  - Carte interactive avec Leaflet et l'API TomTom
-  - Conception de modèles de données NoSQL
-- **Stack** : React, Node.js, Leaflet, API TomTom, MongoDB
+  - API Node.js pour les fonctionnalités du front
+  - Application web React : carte interactive Leaflet et tableaux
+  - Script JavaScript hébergé sur AWS et exécuté par une tâche planifiée (cron) pour collecter les données de trafic en temps réel (API TomTom)
+  - Modèles de données NoSQL sur MongoDB Atlas
+  - Agile Kanban, revues de code
+- **Stack** : React, Node.js, Leaflet, API TomTom, MongoDB Atlas, AWS, Docker, Jira, Confluence
 
 ## Formation
 
@@ -91,7 +100,6 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 - Sport : course à pied, tennis, projet ELOP Tour
 - Lecture, échecs
 - Échange avec un collège britannique
-- Soutien scolaire bénévole (CLAS, maison de quartier)
 
 ## Projets personnels
 

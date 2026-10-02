@@ -1,23 +1,59 @@
 ---
-// Schéma volontairement simplifié : aucune information interne au client.
-const steps = [
-  { title: 'Systèmes Maisons du Monde', detail: 'Canaux de vente, stocks, transport' },
-  { title: 'Pub/Sub', detail: "Topics d'événements", accent: true },
-  { title: 'Services de flux', detail: 'Java / Spring Boot sur GCP' },
-  { title: 'OMS OneStock', detail: 'Orchestration des commandes' },
-];
+// Schéma d'architecture simplifié, en étapes successives. Aucune information interne au client.
+interface Step {
+  title: string;
+  detail: string;
+  accent?: boolean;
+}
+
+interface Props {
+  steps: Step[];
+  caption: string;
+  /** Sens des liaisons sans légende : échanges dans les deux sens, ou flux à sens unique. */
+  direction?: 'both' | 'forward';
+  /** Liaisons légendées, indexées par l'étape à laquelle elles mènent (à partir de 1). */
+  links?: Record<number, { out: string; in?: string }>;
+}
+
+const { steps, caption, direction = 'both', links = {} } = Astro.props;
+const arrows = direction === 'both' ? { mobile: '⇅', desktop: '⇄' } : { mobile: '↓', desktop: '→' };
 ---
 
 <figure class="not-prose my-10 leading-snug">
   <ol class="flex flex-col items-stretch gap-2 md:flex-row md:items-center">
     {steps.map((step, index) => (
       <>
-        {index > 0 && (
-          <li aria-hidden="true" class="text-muted text-center font-mono text-lg">
-            <span class="md:hidden">⇅</span>
-            <span class="hidden md:inline">⇄</span>
-          </li>
-        )}
+        {index > 0 &&
+          (links[index] ? (
+            <li class="text-muted text-center font-mono text-xs">
+              <p>
+                <span aria-hidden="true" class="md:hidden">
+                  ↓{' '}
+                </span>
+                {links[index].out}
+                <span aria-hidden="true" class="hidden md:inline">
+                  {' '}
+                  →
+                </span>
+              </p>
+              {links[index].in && (
+                <p class="mt-1">
+                  <span aria-hidden="true" class="md:hidden">
+                    ↑{' '}
+                  </span>
+                  <span aria-hidden="true" class="hidden md:inline">
+                    ←{' '}
+                  </span>
+                  {links[index].in}
+                </p>
+              )}
+            </li>
+          ) : (
+            <li aria-hidden="true" class="text-muted text-center font-mono text-lg">
+              <span class="md:hidden">{arrows.mobile}</span>
+              <span class="hidden md:inline">{arrows.desktop}</span>
+            </li>
+          ))}
         <li
           class:list={[
             'flex-1 rounded-lg border p-4 text-center',
@@ -30,8 +66,5 @@ const steps = [
       </>
     ))}
   </ol>
-  <figcaption class="text-muted mt-4 text-center text-sm">
-    Vue simplifiée des échanges : chaque système communique via des événements Pub/Sub, dans les
-    deux sens.
-  </figcaption>
+  <figcaption class="text-muted mt-4 text-center text-sm">{caption}</figcaption>
 </figure>

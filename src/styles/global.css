@@ -47,6 +47,8 @@
     @apply bg-bg text-fg font-sans antialiased;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+    /* Gouttière toujours réservée : bloquer le défilement (carte ouverte) ne décale rien. */
+    scrollbar-gutter: stable;
   }
 
   ::selection {
@@ -57,10 +59,37 @@
     @apply outline-accent rounded-sm outline-2 outline-offset-2;
   }
 
+  /* Carte d'étude de cas ouverte : la page derrière ne défile plus. */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
+  }
+}
+
+/* Sommaire en bulles de la carte d'étude de cas (voir ExperienceItem) : la bulle de la
+   section en cours de lecture est pleine. */
+@layer components {
+  [data-case-nav] {
+    scrollbar-width: none;
+  }
+
+  .case-pill {
+    /* Sans transition : chaque changement de bulle animé redessinait toute la carte pendant le
+       défilement (saccades). */
+    @apply border-border text-muted hover:text-fg shrink-0 rounded-full border px-4 py-1.5 text-sm font-medium whitespace-nowrap;
+  }
+
+  .case-pill:hover {
+    border-color: color-mix(in oklch, var(--fg) 30%, transparent);
+  }
+
+  .case-pill[aria-current='true'] {
+    @apply border-accent bg-accent text-bg;
   }
 }
 
@@ -70,6 +99,12 @@
   from {
     opacity: 0;
     translate: 0 0.75rem;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
 }
 
@@ -107,6 +142,15 @@
   .js [data-reveal].is-visible {
     opacity: 1;
     translate: none;
+  }
+
+  /* Ouverture de la carte d'étude de cas (voir ExperienceItem). */
+  dialog[data-case-dialog][open] {
+    animation: fade-up 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  dialog[data-case-dialog][open]::backdrop {
+    animation: fade-in 0.25s ease-out;
   }
 
   /* Curseur de l'effet machine à écrire (voir Typewriter). */
