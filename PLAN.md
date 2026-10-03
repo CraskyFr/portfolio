@@ -2,6 +2,20 @@
 
 Objectif : un site sobre, rapide et professionnel centré sur l'**expérience professionnelle** : missions, responsabilités, impact, choix techniques.
 
+**État au 03/10/2026** : site en ligne sur paulbodin.fr, étapes 0 à 7 et 9 terminées. Le travail restant porte sur le contenu (étapes 10 et 11) et la diffusion (étape 8).
+
+## Prochaines étapes (par priorité)
+
+1. **Impact des missions** (étape 11.1) : réponses de Paul encore attendues
+   - Maisons du Monde : volumes traités par jour, sujet porté de bout en bout
+   - Code Factory : projets audités avec Green Code Pattern
+   - ACDP : suite donnée aux POC et à la présentation à Paris
+   - Clear Channel : réutilisation du prototype après la mission
+   - Toutes missions : une réalisation dont Paul est fier (bug coriace, gain de performance, initiative)
+2. **Diffusion** (étape 8) : lien du site sur LinkedIn, GitHub et dans le CV
+3. **À propos plus personnel** (étape 11.4) : motivations, échange avec un collège britannique
+4. *(optionnel)* Une note technique, puis le confort des études de cas (barre de progression, schéma agrandissable)
+
 ---
 
 ## Étape 0 — Décisions ✅
@@ -17,22 +31,22 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 ---
 
-## Étape 1 — Contenu (avant le code)
+## Étape 1 — Contenu (avant le code) ✅
 
-- [ ] **Accroche** : une phrase claire (ex. « Développeur backend Java/Spring — je conçois des API robustes et maintenables »)
-- [ ] **Expériences professionnelles** — pour chaque poste :
+- [x] **Accroche** : une phrase claire (ex. « Développeur backend Java/Spring — je conçois des API robustes et maintenables »)
+- [x] **Expériences professionnelles** — pour chaque poste :
   - Entreprise, intitulé du poste, dates, lieu
   - Contexte (secteur, produit, taille de l'équipe)
   - Missions et responsabilités
   - **Réalisations chiffrées** (perf, volumétrie, délais, qualité…)
   - Stack technique
-- [ ] **À propos** : parcours, ce que tu aimes faire, ce que tu recherches
-- [ ] **Compétences** groupées par domaine (sans barres de pourcentage)
-- [ ] **Formation / certifications**
-- [ ] **Projets personnels** (section secondaire) : CraskyApi, CraskyUI, template Spring Boot
-- [ ] **Contact** : email, LinkedIn, GitHub, CV en PDF
+- [x] **À propos** : parcours, ce que tu aimes faire, ce que tu recherches
+- [x] **Compétences** groupées par domaine (sans barres de pourcentage)
+- [x] **Formation** (certifications : aucune pour l'instant)
+- [x] **Projets personnels** (section secondaire) : le portfolio pour l'instant ; CraskyApi, CraskyUI et le template Spring Boot une fois aboutis et publics
+- [x] **Contact** : email, LinkedIn, GitHub, CV en PDF
 
-## Étape 2 — Initialisation du projet
+## Étape 2 — Initialisation du projet ✅
 
 - [x] Créer le projet Astro (TypeScript strict) dans `portfolio/`
 - [x] Ajouter Tailwind CSS, Prettier, astro check (ESLint écarté pour l'instant)
@@ -45,15 +59,15 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
     content/      expériences et projets en Markdown (Content Collections)
   public/         CV.pdf, images, favicon
   ```
-- [ ] Premier commit + dépôt GitHub
+- [x] Premier commit + dépôt GitHub (https://github.com/CraskyFr/portfolio)
 
-## Étape 3 — Design system
+## Étape 3 — Design system ✅
 
 - [x] Palette (neutres + 1 accent), typographies (ex. Inter + JetBrains Mono)
 - [x] Mode clair / sombre
 - [x] Composants de base : boutons, cartes, badges de technos, sections
 
-## Étape 4 — Pages et sections
+## Étape 4 — Pages et sections ✅
 
 - [x] Layout global (header, navigation, footer)
 - [x] Hero (nom, titre, accroche, boutons CV / Contact / LinkedIn)
@@ -70,7 +84,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 - [x] Schémas d'architecture dans les missions marquantes (composant `ArchitectureDiagram` en HTML/CSS plutôt que Mermaid), sans données confidentielles
 - [ ] *(optionnel)* Démo live de CraskyApi (Swagger UI hébergé)
 
-## Étape 6 — Qualité
+## Étape 6 — Qualité ✅
 
 - [x] Responsive (mobile, tablette, desktop)
 - [x] Accessibilité (contrastes, navigation clavier, `alt` sur les images)
@@ -78,7 +92,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 - [x] Lighthouse ≥ 95 sur toutes les catégories (99–100 mesuré le 01/10/2026)
 - [x] Relecture orthographique
 
-## Étape 7 — Déploiement
+## Étape 7 — Déploiement ✅
 
 - [x] GitHub Actions (format, typage, build)
 - [x] Déploiement Vercel
@@ -88,10 +102,10 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 ## Étape 8 — Après la mise en ligne
 
 - [ ] Lien sur LinkedIn, GitHub, CV
-- [ ] Analytics respectueux de la vie privée (Plausible / Umami), optionnel
+- [x] Mesure d'audience : Vercel Analytics (sans cookie)
 - [ ] Mettre à jour à chaque nouvelle mission
 
-## Étape 9 — Animations
+## Étape 9 — Animations ✅
 
 Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced-motion: reduce`, contenu visible sans JavaScript, Lighthouse ≥ 95 conservé.
 
@@ -108,7 +122,7 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Carte plein écran sur mobile
 - [x] Navigation : étude plus récente / plus ancienne (boutons et flèches ← →), adresse propre `/#etude-…` (partageable, bouton retour qui ferme la carte)
 - [ ] *(optionnel)* Panneau latéral sur ordinateur, barre de progression de lecture, schéma agrandissable
-- [ ] Résultats chiffrés des missions (à fournir par Paul)
+- [ ] Résultats chiffrés des missions : Maisons du Monde et Code Factory faits (03/10/2026), ACDP et Clear Channel en attente des réponses de Paul
 
 ## Étape 11 — Contenu qui se démarque
 
@@ -119,10 +133,13 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [ ] 3 ou 4 lignes fortes par mission, classées par impact (verbe d'action + quoi + résultat)
 - [x] Maisons du Monde : RUN (analyse et correction des anomalies en production), relation avec le métier et d'autres équipes, formation des nouveaux arrivants
 - [x] Code Factory : SVS livré en production et utilisé pour présenter aux clients les projets d'innovation (première section « Résultats »)
-- [ ] Maisons du Monde : chiffres (nombre de flux, volumes par jour, mise en service de OneStock, incidents réduits)
-- [ ] Code Factory : usage de Green Code Pattern (projets audités), niveau RGAA atteint
+- [x] Maisons du Monde : une quinzaine de flux, Dead Letter Queues pour rejouer les erreurs techniques et fonctionnelles, formation de plusieurs nouveaux arrivants, intégration de OneStock pensée pour un déploiement progressif (sans pays ni mise en production affirmée : OneStock n'est pas encore en production)
+- [ ] Maisons du Monde : volumes par jour, sujet porté de bout en bout
+- [x] Code Factory : SVS respecte l'ensemble des critères RGAA, en français et en anglais
+- [ ] Code Factory : usage de Green Code Pattern (projets audités)
 - [ ] ACDP : suite donnée aux POC et à la présentation à Paris
-- [ ] Clear Channel : réutilisation du prototype, nombre de sources de données intégrées
+- [x] Clear Channel : sources intégrées (API TomTom et Google Maps)
+- [ ] Clear Channel : réutilisation du prototype
 
 ### 2. Points forts du profil mis en avant (accroche, À propos, tête des réalisations)
 
