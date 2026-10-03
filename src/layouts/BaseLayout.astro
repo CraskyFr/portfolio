@@ -83,6 +83,12 @@ const person = {
         { rootMargin: '0px 0px -10% 0px' },
       );
       document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+      // Navigation au clavier : un lien qui reçoit le focus n'attend pas l'observateur pour apparaître.
+      document.addEventListener('focusin', (event) => {
+        if (event.target instanceof Element) {
+          event.target.closest('[data-reveal]')?.classList.add('is-visible');
+        }
+      });
     </script>
   </body>
 </html>
