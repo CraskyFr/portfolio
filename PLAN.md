@@ -96,7 +96,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced-motion: reduce`, contenu visible sans JavaScript, Lighthouse ≥ 95 conservé.
 
 - [x] Fondations : animation `fade-up` et décalage `--delay` dans `global.css`, respect de `prefers-reduced-motion`
-- [x] Hero : apparition en cascade (localisation, nom, accroche, boutons) et effet machine à écrire sur « Développeur Backend Java » (texte complet conservé pour le SEO et les lecteurs d'écran)
+- [x] Hero : arrivée en machine à écrire sur toute la partie haute (nom, titre, localisation, accroche, l'un après l'autre), photo en fondu au début et boutons à la fin ; texte complet dans le HTML (SEO, lecteurs d'écran, sans JS), sans décalage de mise en page
 - [x] Apparition au défilement (`IntersectionObserver`, attribut `data-reveal`) : titres de section, expériences, compétences, projets, à propos, contact
 - [x] Micro-interactions : survol des boutons, cartes et lien « étude de cas », frise qui se dessine au défilement (CSS scroll-driven), changement de thème en cercle (View Transitions)
 - [x] Vérifications : clavier (focus visible, révélation immédiate au focus), animations réduites, sans JavaScript, mobile (360 px, sans débordement), clair/sombre, Lighthouse 99–100 (LCP 1,9 s mobile, 0,4 s ordinateur, mesuré le 03/10/2026)
