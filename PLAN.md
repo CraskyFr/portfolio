@@ -67,7 +67,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 ## Étape 5 — Touche backend
 
-- [ ] Schémas d'architecture (Mermaid) dans les missions marquantes, sans données confidentielles
+- [x] Schémas d'architecture dans les missions marquantes (composant `ArchitectureDiagram` en HTML/CSS plutôt que Mermaid), sans données confidentielles
 - [ ] *(optionnel)* Démo live de CraskyApi (Swagger UI hébergé)
 
 ## Étape 6 — Qualité
@@ -99,7 +99,7 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Hero : apparition en cascade (localisation, nom, accroche, boutons) et effet machine à écrire sur « Développeur Backend Java » (texte complet conservé pour le SEO et les lecteurs d'écran)
 - [x] Apparition au défilement (`IntersectionObserver`, attribut `data-reveal`) : titres de section, expériences, compétences, projets, à propos, contact
 - [x] Micro-interactions : survol des boutons, cartes et lien « étude de cas », frise qui se dessine au défilement (CSS scroll-driven), changement de thème en cercle (View Transitions)
-- [ ] Vérifications : clavier, animations réduites, sans JavaScript, mobile, clair/sombre, Lighthouse (LCP)
+- [x] Vérifications : clavier (focus visible, révélation immédiate au focus), animations réduites, sans JavaScript, mobile (360 px, sans débordement), clair/sombre, Lighthouse 99–100 (LCP 1,9 s mobile, 0,4 s ordinateur, mesuré le 03/10/2026)
 
 ## Étape 10 — Études de cas : contenu et ergonomie
 
@@ -135,9 +135,9 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 
 ### 3. Preuves
 
-- [ ] Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)
+- [x] ~~Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)~~ (écarté : pas de recommandation disponible)
 - [x] Lien GitHub sur la carte projet (dépôt public du portfolio) ; README des futurs projets à soigner
-- [ ] Certifications ou formations (ex. GCP Associate Cloud Engineer)
+- [x] ~~Certifications ou formations (ex. GCP Associate Cloud Engineer)~~ (écarté : pas de certification pour l'instant)
 
 ### 4. Pour aller plus loin
 
