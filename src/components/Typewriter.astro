@@ -1,35 +1,54 @@
 ---
-// Effet machine à écrire. Le texte complet reste dans le HTML : visible sans JS,
-// lu d'un bloc par les lecteurs d'écran (sr-only) et indexé normalement.
+// Effet machine à écrire. Le texte complet reste dans le HTML : visible sans JS, lu d'un bloc par
+// les lecteurs d'écran et indexé normalement. La partie pas encore écrite est seulement rendue
+// invisible : elle garde sa place, rien ne bouge autour pendant la frappe.
+import type { HTMLTag } from 'astro/types';
+
 interface Props {
   text: string;
+  as?: HTMLTag;
   class?: string;
   /** Délai avant la première lettre, en millisecondes. */
   delay?: number;
+  /** Durée d'une lettre, en millisecondes. */
+  speed?: number;
+  /** Curseur laissé clignotant à la fin (dernière ligne d'une séquence). */
+  lastLine?: boolean;
 }
 
-const { text, class: className, delay = 250 } = Astro.props;
+const {
+  text,
+  as: Tag = 'p',
+  class: className,
+  delay = 250,
+  speed = 55,
+  lastLine = false,
+} = Astro.props;
 ---
 
-<p class={className}>
-  <span class="sr-only">{text}</span>
-  <span aria-hidden="true" class="typewriter">
-    {text}
-  </span>
-  <script is:inline define:vars={{ delay }}>
-    (() => {
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const typed = document.currentScript.parentElement.querySelector('.typewriter');
-      const text = typed.textContent;
-      let length = 0;
-      typed.textContent = '';
-      typed.dataset.typing = '';
-      const type = () => {
-        typed.textContent = text.slice(0, ++length);
-        if (length < text.length) setTimeout(type, 55);
-        else setTimeout(() => delete typed.dataset.typing, 2500);
-      };
-      setTimeout(type, delay);
-    })();
-  </script>
-</p>
+<Tag class={className}>{text}</Tag>
+<script is:inline define:vars={{ text, delay, speed, lastLine }}>
+  (() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const element = document.currentScript.previousElementSibling;
+    const typed = document.createTextNode('');
+    const cursor = document.createElement('span');
+    const rest = document.createElement('span');
+    cursor.className = 'typewriter-cursor';
+    cursor.ariaHidden = 'true';
+    rest.className = 'typewriter-rest';
+    rest.textContent = text;
+    element.replaceChildren(typed, rest);
+    let length = 0;
+    const type = () => {
+      typed.data = text.slice(0, ++length);
+      rest.textContent = text.slice(length);
+      if (length < text.length) setTimeout(type, speed);
+      else setTimeout(() => element.replaceChildren(text), lastLine ? 2500 : 0);
+    };
+    setTimeout(() => {
+      element.insertBefore(cursor, rest);
+      type();
+    }, delay);
+  })();
+</script>
