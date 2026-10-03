@@ -9,8 +9,10 @@ summary: Intégration de l'OMS OneStock et refonte complète des flux supply cha
 highlights:
   - Développement d'API REST, de flux et de batchs, et conception des modèles de données
   - Cadrage technique de l'intégration de l'OMS OneStock
-  - Refonte des flux internes autour d'une architecture événementielle (Pub/Sub) et intégration de OneStock via API REST et webhooks
+  - Refonte d'une quinzaine de flux autour d'une architecture événementielle (Pub/Sub) et intégration de OneStock via API REST et webhooks
+  - Intégration de OneStock pensée pour un déploiement progressif, pays par pays
   - 'RUN : diagnostic et correction des incidents de production, fonctionnels comme techniques'
+  - Dead Letter Queues pour rejouer les erreurs techniques comme fonctionnelles
   - Formation des nouveaux arrivants, pair programming et revues techniques
 stack: [Java, Spring Boot, GCP, Pub/Sub, Gemini Code Assist]
 method: Agile Scrum
@@ -48,13 +50,19 @@ Ces services font le lien avec OneStock : ils transmettent les données à l'OMS
   caption="Vue simplifiée des échanges : événements Pub/Sub en interne, API REST et webhooks avec OneStock."
 />
 
-En interne, ce découplage par messages permet de rejouer un flux en cas d'incident, d'absorber les pics de charge et d'ajouter un nouveau consommateur sans modifier les producteurs.
+En interne, ce découplage par messages permet de rejouer un flux en cas d'incident grâce aux **Dead Letter Queues**, d'absorber les pics de charge et d'ajouter un nouveau consommateur sans modifier les producteurs.
 
 ## Ce que j'ai fait
 
 - **Cadrage technique** : participation à la conception des flux et des modèles de données.
-- **Développement** des services de flux, des API REST et des batchs en Java / Spring Boot.
+- **Développement** d'une quinzaine de flux (services Pub/Sub, API REST et batchs) en Java / Spring Boot.
 - **RUN** : diagnostic et correction des incidents de production, fonctionnels comme techniques.
-- **Transmission** : formation des nouveaux arrivants dans l'équipe.
+- **Transmission** : formation de plusieurs nouveaux arrivants dans l'équipe.
 - **Qualité** : pair programming et revues techniques au sein de l'équipe.
 - **IA dans le développement** : Gemini Code Assist au quotidien pour gagner en productivité, en accélérant les tâches répétitives (configuration…) et en analysant le code pour y repérer des améliorations ou des failles.
+
+## Résultats
+
+- **OneStock intégré** aux flux supply chain, avec un déploiement progressif pays par pays.
+- **Une quinzaine de flux** refondus ou créés autour de l'architecture événementielle.
+- **Un RUN plus serein** : grâce aux Dead Letter Queues, les messages en erreur, techniques comme fonctionnels, sont conservés et peuvent être rejoués une fois la cause corrigée, sans perte de données.

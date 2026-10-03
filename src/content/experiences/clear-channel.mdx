@@ -11,10 +11,22 @@ highlights:
   - Carte interactive Leaflet et tableaux de données
   - Collecte automatisée des données de trafic en temps réel, via une tâche planifiée sur AWS
   - Modèles de données NoSQL sur MongoDB Atlas
-stack: [React, Node.js, Leaflet, TomTom API, MongoDB, AWS]
+stack: [React, Node.js, Leaflet, TomTom API, Google Maps API, MongoDB, AWS]
 team: Seul développeur, avec un Product Owner et un architecte logiciel
 method: Agile Kanban, revues de code
-environment: [React, Node.js, Leaflet, API TomTom, MongoDB Atlas, AWS, Docker, Jira, Confluence]
+environment:
+  [
+    React,
+    Node.js,
+    Leaflet,
+    API TomTom,
+    API Google Maps,
+    MongoDB Atlas,
+    AWS,
+    Docker,
+    Jira,
+    Confluence,
+  ]
 featured: true
 ---
 
@@ -30,12 +42,12 @@ Clear Channel France est un acteur de l'affichage publicitaire. Le projet consis
 
 ## Architecture
 
-Une tâche planifiée hébergée sur **AWS** interroge régulièrement les API externes, dont l'API TomTom pour le trafic, et stocke les données dans **MongoDB Atlas** avec les données internes. Une **API Node.js** les expose ensuite à l'application **React**.
+Une tâche planifiée hébergée sur **AWS** interroge régulièrement les API externes, TomTom pour le trafic et Google Maps, et stocke les données dans **MongoDB Atlas** avec les données internes. Une **API Node.js** les expose ensuite à l'application **React**.
 
 <ArchitectureDiagram
   direction="forward"
   steps={[
-    { title: 'API externes', detail: 'Trafic temps réel (TomTom)' },
+    { title: 'API externes', detail: 'TomTom (trafic temps réel), Google Maps' },
     { title: 'Tâche planifiée', detail: 'Script JavaScript sur AWS', accent: true },
     { title: 'MongoDB Atlas', detail: 'Données externes et internes' },
     { title: 'API Node.js', detail: 'Données pour le front' },
