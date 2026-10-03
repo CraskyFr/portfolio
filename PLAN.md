@@ -135,9 +135,9 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 
 ### 3. Preuves
 
-- [ ] Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)
+- [x] ~~Témoignages : 2 ou 3 citations (recommandations LinkedIn, avec accord)~~ (écarté : pas de recommandation disponible)
 - [x] Lien GitHub sur la carte projet (dépôt public du portfolio) ; README des futurs projets à soigner
-- [ ] Certifications ou formations (ex. GCP Associate Cloud Engineer)
+- [x] ~~Certifications ou formations (ex. GCP Associate Cloud Engineer)~~ (écarté : pas de certification pour l'instant)
 
 ### 4. Pour aller plus loin
 
