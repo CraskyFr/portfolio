@@ -133,6 +133,11 @@
     animation: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms) backwards;
   }
 
+  /* Sans JS, pas d'effet machine à écrire à attendre : tout arrive d'emblée. */
+  html:not(.js) .intro {
+    animation-delay: 0ms;
+  }
+
   /* Apparition au défilement : masqué seulement si le JS tourne (classe .js sur <html>). */
   .js [data-reveal] {
     opacity: 0;
@@ -156,14 +161,23 @@
     animation: fade-in 0.25s ease-out;
   }
 
-  /* Curseur de l'effet machine à écrire (voir Typewriter). */
-  .typewriter[data-typing]::after {
-    content: '';
+  /* Effet machine à écrire (voir Typewriter) : le texte à venir garde sa place, invisible, et le
+     curseur n'occupe aucune largeur, pour que rien ne bouge pendant la frappe. */
+  .typewriter-rest {
+    opacity: 0;
+  }
+
+  .typewriter-cursor {
+    position: relative;
     display: inline-block;
+  }
+
+  .typewriter-cursor::before {
+    content: '';
+    position: absolute;
+    bottom: -0.15em;
     width: 2px;
     height: 1em;
-    margin-left: 2px;
-    translate: 0 0.15em;
     background: var(--accent);
     animation: caret-blink 1s steps(1) infinite;
   }

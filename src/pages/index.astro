@@ -31,6 +31,23 @@ const neighbours = (experience: (typeof experiences)[number]) => {
   const index = caseStudies.indexOf(experience);
   return index === -1 ? {} : { newer: caseStudies[index - 1], older: caseStudies[index + 1] };
 };
+
+// Arrivée sur la page : les lignes du haut s'écrivent l'une après l'autre, de plus en plus vite
+// (le texte s'allonge), puis les boutons apparaissent.
+const pause = 150;
+let elapsed = 250;
+const typing = (text: string, speed: number) => {
+  const line = { text, speed, delay: elapsed };
+  elapsed += text.length * speed + pause;
+  return line;
+};
+const hero = {
+  name: typing(site.name, 60),
+  title: typing(site.title, 35),
+  location: typing(site.location, 25),
+  tagline: typing(site.tagline, 14),
+};
+const buttonsDelay = elapsed;
 ---
 
 <BaseLayout>
@@ -42,18 +59,12 @@ const neighbours = (experience: (typeof experiences)[number]) => {
       loading="eager"
       class="intro border-border mb-6 size-24 rounded-full border object-cover object-[50%_20%] sm:size-28"
     />
-    <h1 class="intro text-4xl font-bold tracking-tight sm:text-5xl" style="--delay: 40ms">
-      {site.name}
-    </h1>
-    <Typewriter text={site.title} class="text-muted mt-2 text-xl sm:text-2xl" delay={300} />
-    <p class="intro text-accent mt-2 font-mono text-sm" style="--delay: 120ms">
-      {site.location}
-    </p>
-    <p class="intro mt-6 max-w-2xl text-lg leading-relaxed" style="--delay: 160ms">
-      {site.tagline}
-    </p>
+    <Typewriter {...hero.name} as="h1" class="text-4xl font-bold tracking-tight sm:text-5xl" />
+    <Typewriter {...hero.title} class="text-muted mt-2 text-xl sm:text-2xl" />
+    <Typewriter {...hero.location} class="text-accent mt-2 font-mono text-sm" />
+    <Typewriter {...hero.tagline} class="mt-6 max-w-2xl text-lg leading-relaxed" lastLine />
     <div class="mt-8 flex flex-wrap items-center gap-3">
-      <Button href={site.cv} download class="intro" style="--delay: 240ms">
+      <Button href={site.cv} download class="intro" style={`--delay: ${buttonsDelay}ms`}>
         <Icon name="download" />
         Télécharger le CV
       </Button>
@@ -63,7 +74,7 @@ const neighbours = (experience: (typeof experiences)[number]) => {
         target="_blank"
         rel="noopener"
         class="intro"
-        style="--delay: 300ms"
+        style={`--delay: ${buttonsDelay + 60}ms`}
       >
         <Icon name="linkedin" />
         LinkedIn
@@ -74,7 +85,7 @@ const neighbours = (experience: (typeof experiences)[number]) => {
         target="_blank"
         rel="noopener"
         class="intro"
-        style="--delay: 360ms"
+        style={`--delay: ${buttonsDelay + 120}ms`}
       >
         <Icon name="github" />
         GitHub
