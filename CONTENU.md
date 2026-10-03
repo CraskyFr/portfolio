@@ -67,15 +67,15 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ### Développeur Full Stack Node/React — Clear Channel France
 - **Dates** : mai 2022 – septembre 2022
-- **Lieu** : Paris
+- **Lieu** : Paris et Londres (mission à l'international, moitié dans chaque ville)
 - **Contexte** : prototype d'un outil d'analyse de données publiques externes (secteur publicité). Équipe : 1 développeur, un Product Owner et un architecte logiciel
 - **Missions** :
   - API Node.js pour les fonctionnalités du front
   - Application web React : carte interactive Leaflet et tableaux
-  - Script JavaScript hébergé sur AWS et exécuté par une tâche planifiée (cron) pour collecter les données de trafic en temps réel (API TomTom)
+  - Script JavaScript hébergé sur AWS et exécuté par une tâche planifiée (cron) pour collecter les données de trafic en temps réel (API TomTom et API Google Maps)
   - Modèles de données NoSQL sur MongoDB Atlas
   - Agile Kanban, revues de code
-- **Stack** : React, Node.js, Leaflet, API TomTom, MongoDB Atlas, AWS, Docker, Jira, Confluence
+- **Stack** : React, Node.js, Leaflet, API TomTom, API Google Maps, MongoDB Atlas, AWS, Docker, Jira, Confluence
 
 ## Formation
 
@@ -100,7 +100,6 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 - Sport : course à pied, tennis
 - Lecture, échecs
-- Échange avec un collège britannique
 
 ## Projets personnels
 

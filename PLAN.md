@@ -9,7 +9,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 1. **Impact des missions** (étape 11.1) : réponses de Paul encore attendues
    - Toutes missions : une réalisation dont Paul est fier (bug coriace, gain de performance, initiative)
 2. **Diffusion** (étape 8) : lien du site sur LinkedIn, GitHub et dans le CV
-3. **À propos plus personnel** (étape 11.4) : motivations, échange avec un collège britannique
+3. **À propos plus personnel** (étape 11.4) : motivations, ce que Paul recherche
 4. *(optionnel)* Une note technique, puis le confort des études de cas (barre de progression, schéma agrandissable)
 
 ---
@@ -155,4 +155,4 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [x] Section « Comment je travaille » : 4 principes illustrés par du vécu
 - [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
 - [x] Projets personnels : ce portfolio en projet phare, avec lien GitHub (CraskyApi et CraskyUI à ajouter une fois aboutis)
-- [ ] « À propos » plus personnel : motivations, échange avec un collège britannique (ELOP Tour écarté)
+- [ ] « À propos » plus personnel : motivations, ce que Paul recherche (ELOP Tour et échange avec un collège britannique écartés)
