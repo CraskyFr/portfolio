@@ -24,6 +24,10 @@ const { data } = experience;
 ---
 
 <BaseLayout title={data.client ?? data.company} description={data.summary}>
+  <span
+    aria-hidden="true"
+    class="reading-progress bg-accent fixed inset-x-0 top-0 z-50 h-0.5"
+  ></span>
   <Container class="py-16 sm:py-20">
     <a href="/#experience" class="text-muted hover:text-accent text-sm transition-colors">
       ← Retour aux expériences
