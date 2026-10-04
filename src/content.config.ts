@@ -13,6 +13,7 @@ const experiences = defineCollection({
       start: z.coerce.date(),
       end: z.coerce.date().optional(),
       summary: z.string(),
+      // Les 3 premières lignes sont affichées dans la frise : les classer par impact.
       highlights: z.array(z.string()),
       stack: z.array(z.string()),
       /** Logo affiché dans la frise : celui du client chez qui la mission a eu lieu, sinon de l'employeur. */

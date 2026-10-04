@@ -8,8 +8,8 @@ start: 2023-09-01
 end: 2024-02-01
 summary: Deux applications internes, un outil d'audit de numérique responsable puis un site vitrine conforme au RGAA, en production et utilisé face aux clients.
 highlights:
-  - Green Code Pattern, outil d'audit sur le numérique responsable, utilisé pour auditer plusieurs projets réels
   - SVS, site vitrine conforme à l'ensemble des critères RGAA et disponible en français et en anglais, livré en production et utilisé pour présenter aux clients les projets d'innovation
+  - Green Code Pattern, outil d'audit sur le numérique responsable, utilisé pour auditer plusieurs projets réels
   - Backend Java Spring Boot exposant des API RESTful sur AWS, testé avec JUnit et Mockito
   - Application Angular testée avec Jasmine et Karma
   - Intégration continue avec Jenkins et SonarQube
