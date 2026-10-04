@@ -1,3 +1,6 @@
+import type { ImageMetadata } from 'astro';
+import portfolioShot from '../assets/projects/portfolio.png';
+
 export const about = [
   "Ingénieur diplômé de l'ESIEA, je suis développeur backend Java. Depuis 2024, j'interviens sur la supply chain de Maisons du Monde : j'ai participé au cadrage technique de l'intégration d'un nouvel OMS et à la refonte des flux autour d'une architecture événementielle sur Google Cloud, dont j'assure aussi le RUN.",
   "J'aime les systèmes lisibles et robustes : des API bien contractualisées, des flux qui résistent aux pannes et un code que l'équipe a plaisir à reprendre.",
@@ -75,12 +78,22 @@ export const languages = [
 export const interests = ['Course à pied et tennis', 'Échecs et lecture'];
 
 // Projets personnels ; `url` : dépôt GitHub public, affiché en lien sur la carte.
-export const projects: { name: string; description: string; stack: string[]; url?: string }[] = [
+export const projects: {
+  name: string;
+  description: string;
+  stack: string[];
+  url?: string;
+  /** Capture réelle du projet (jamais d'illustration générique). */
+  image?: ImageMetadata;
+  imageAlt?: string;
+}[] = [
   {
     name: 'Portfolio',
     description:
       'Site développé en intégration et déploiement continus, performances (Lighthouse 100) et accessibilité prises en compte.',
     stack: ['Astro 7', 'TypeScript', 'Tailwind CSS 4', 'GitHub Actions', 'Vercel'],
     url: 'https://github.com/CraskyFr/portfolio',
+    image: portfolioShot,
+    imageAlt: "Capture de l'accueil du portfolio : nom, titre, accroche et photo",
   },
 ];
