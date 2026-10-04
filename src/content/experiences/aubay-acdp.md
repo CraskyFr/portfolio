@@ -8,11 +8,11 @@ start: 2023-04-01
 end: 2023-09-01
 summary: Plateforme de données clients qui segmente la clientèle d'une marque pour cibler ses campagnes marketing.
 highlights:
+  - POC de segmentation client (géographique, comportementale, technologique), traduits en recommandations pour le client sur l'exploitation de ses données
   - Backend Java Spring Boot exposant des API RESTful sur AWS, testé avec JUnit et Mockito
+  - Présentation du projet à Paris devant la direction
   - Application Angular de visualisation des données clients (tableaux, graphiques)
   - Deux bases de données, MongoDB pour les ventes et PostgreSQL pour l'authentification
-  - POC de segmentation client (géographique, comportementale, technologique), traduits en recommandations pour le client sur l'exploitation de ses données
-  - Présentation du projet à Paris devant la direction
 stack: [Java, Spring Boot, Angular, MongoDB, PostgreSQL, AWS]
 team: 2 développeurs, 4 data analysts, un Product Owner et un responsable
 method: Agile Scrum
