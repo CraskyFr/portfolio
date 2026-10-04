@@ -56,7 +56,8 @@ const buttonsDelay = elapsed;
     <Image
       src={photo}
       alt={`Photo de ${site.name}`}
-      width={448}
+      widths={[224, 448]}
+      sizes="(min-width: 64rem) 224px, 112px"
       loading="eager"
       class="intro border-border size-24 rounded-2xl border object-cover object-[50%_20%] sm:size-28 lg:order-last lg:size-56"
     />

@@ -2,7 +2,7 @@
 
 Objectif : un site sobre, rapide et professionnel centré sur l'**expérience professionnelle** : missions, responsabilités, impact, choix techniques.
 
-**État au 03/10/2026** : site en ligne sur paulbodin.fr, étapes 0 à 7 et 9 terminées. Le travail restant porte sur le contenu (étapes 10 et 11) et la diffusion (étape 8).
+**État au 04/10/2026** : site en ligne sur paulbodin.fr, étapes 0 à 7, 9 et 12 terminées. Le travail restant porte sur le contenu (étapes 10 et 11) et la diffusion (étape 8).
 
 ## Prochaines étapes (par priorité)
 
@@ -59,7 +59,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 
 ## Étape 3 — Design system ✅
 
-- [x] Palette (neutres + 1 accent), typographies (ex. Inter + JetBrains Mono)
+- [x] Palette (neutres + 1 accent), typographies (Inter + JetBrains Mono, remplacées par Geist + Geist Mono à l'étape 12)
 - [x] Mode clair / sombre
 - [x] Composants de base : boutons, cartes, badges de technos, sections
 
@@ -157,3 +157,15 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
 - [x] Projets personnels : ce portfolio en projet phare, avec lien GitHub (CraskyApi et CraskyUI à ajouter une fois aboutis)
 - [ ] « À propos » plus personnel : motivations, ce que Paul recherche (ELOP Tour et échange avec un collège britannique écartés)
+
+## Étape 12 — Finition visuelle ✅
+
+Audit et corrections guidés par les skills de design Taste (design-taste-frontend, minimalist-ui, high-end-visual-design, redesign) et editorial : garder la structure, retirer ce qui fait « modèle généré ». Écartés : effet agence (double bordure, navigation en verre, flou), police serif en texte courant, bibliothèques d'animation.
+
+- [x] Nettoyage : plus de tirets longs, vrais titres de section au lieu des libellés mono en capitales, pas de point de statut décoratif, bouton principal sans ombre, `text-wrap: balance` / `pretty`
+- [x] Typographie : Geist et Geist Mono (Fontsource), titres en semi-gras, image Open Graph régénérée
+- [x] Couleur : pastilles de technos neutres, bleu réservé aux liens, au bouton principal, à la frise et à la barre de lecture ; ombre teintée au survol des cartes
+- [x] Mise en page : hero en deux colonnes sur grand écran, compétences en listes de texte, principes sans numéros, projet en rangée pleine largeur avec une vraie capture, adresse mail en grand
+- [x] Mouvement : une seule courbe (`cubic-bezier(0.16, 1, 0.3, 1)`), apparitions décalées de 80 ms dans les listes
+- [x] Vérifications (04/10/2026, build local) : Lighthouse mobile 100 / 100 / 96 / 100 (LCP 1,7 s), ordinateur 100 / 100 / 96 / 100 (LCP 0,4 s) ; le 96 vient du script Vercel Analytics absent en local. 360 px sans débordement en clair et en sombre, contenu visible sans JavaScript, carte d'étude de cas au clavier et à Échap
+- [ ] *(à décider)* Garder seulement les 3 lignes d'impact les plus fortes par mission dans la frise, le détail restant dans l'étude de cas (choix des lignes par Paul)
