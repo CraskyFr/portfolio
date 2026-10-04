@@ -127,6 +127,49 @@
   visibility: hidden;
 }
 
+/* Progression de lecture des études de cas : une barre fine qui se remplit au défilement, sans
+   JS, là où le navigateur le permet (ailleurs, elle reste masquée). Dans la carte, elle suit le
+   corps défilant ([data-case-body]) ; sur la page dédiée, le défilement de la page. Elle suit
+   directement le geste de l'utilisateur : elle reste active quand les animations sont réduites. */
+@keyframes grow-x {
+  from {
+    scale: 0 1;
+  }
+}
+
+.reading-progress {
+  visibility: hidden;
+}
+
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    visibility: visible;
+    transform-origin: left;
+    animation-name: grow-x;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(root block);
+  }
+
+  dialog[data-case-dialog] {
+    timeline-scope: --case-body;
+  }
+
+  [data-case-body] {
+    scroll-timeline: --case-body block;
+  }
+
+  dialog[data-case-dialog] .reading-progress {
+    animation-timeline: --case-body;
+  }
+}
+
+@media print {
+  .reading-progress {
+    display: none;
+  }
+}
+
 @media screen and (prefers-reduced-motion: no-preference) {
   /* Apparition au chargement, décalée via --delay. */
   .intro {
