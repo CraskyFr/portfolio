@@ -51,49 +51,52 @@ const buttonsDelay = elapsed;
 ---
 
 <BaseLayout>
-  <Container class="pt-14 pb-8 sm:pt-20">
+  <Container class="grid gap-6 pt-14 pb-8 sm:pt-20 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
+    {/* Photo à droite du texte sur grand écran, au-dessus sur mobile. */}
     <Image
       src={photo}
       alt={`Photo de ${site.name}`}
-      width={224}
+      width={448}
       loading="eager"
-      class="intro border-border mb-6 size-24 rounded-full border object-cover object-[50%_20%] sm:size-28"
+      class="intro border-border size-24 rounded-2xl border object-cover object-[50%_20%] sm:size-28 lg:order-last lg:size-56"
     />
-    <Typewriter
-      {...hero.name}
-      as="h1"
-      class="text-4xl font-semibold tracking-tighter sm:text-5xl"
-    />
-    <Typewriter {...hero.title} class="text-muted mt-2 text-xl sm:text-2xl" />
-    <Typewriter {...hero.location} class="text-muted mt-2 font-mono text-sm" />
-    <Typewriter {...hero.tagline} class="mt-6 max-w-2xl text-lg leading-relaxed" lastLine />
-    <div class="mt-8 flex flex-wrap items-center gap-3">
-      <Button href={site.cv} download class="intro" style={`--delay: ${buttonsDelay}ms`}>
-        <Icon name="download" />
-        Télécharger le CV
-      </Button>
-      <Button
-        variant="secondary"
-        href={site.links.linkedin}
-        target="_blank"
-        rel="noopener"
-        class="intro"
-        style={`--delay: ${buttonsDelay + 60}ms`}
-      >
-        <Icon name="linkedin" />
-        LinkedIn
-      </Button>
-      <Button
-        variant="secondary"
-        href={site.links.github}
-        target="_blank"
-        rel="noopener"
-        class="intro"
-        style={`--delay: ${buttonsDelay + 120}ms`}
-      >
-        <Icon name="github" />
-        GitHub
-      </Button>
+    <div>
+      <Typewriter
+        {...hero.name}
+        as="h1"
+        class="text-4xl font-semibold tracking-tighter sm:text-5xl"
+      />
+      <Typewriter {...hero.title} class="text-muted mt-2 text-xl sm:text-2xl" />
+      <Typewriter {...hero.location} class="text-muted mt-2 font-mono text-sm" />
+      <Typewriter {...hero.tagline} class="mt-6 max-w-2xl text-lg leading-relaxed" lastLine />
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <Button href={site.cv} download class="intro" style={`--delay: ${buttonsDelay}ms`}>
+          <Icon name="download" />
+          Télécharger le CV
+        </Button>
+        <Button
+          variant="secondary"
+          href={site.links.linkedin}
+          target="_blank"
+          rel="noopener"
+          class="intro"
+          style={`--delay: ${buttonsDelay + 60}ms`}
+        >
+          <Icon name="linkedin" />
+          LinkedIn
+        </Button>
+        <Button
+          variant="secondary"
+          href={site.links.github}
+          target="_blank"
+          rel="noopener"
+          class="intro"
+          style={`--delay: ${buttonsDelay + 120}ms`}
+        >
+          <Icon name="github" />
+          GitHub
+        </Button>
+      </div>
     </div>
   </Container>
 
@@ -123,39 +126,32 @@ const buttonsDelay = elapsed;
   </Section>
 
   <Section id="competences" title="Compétences">
-    <dl class="space-y-6">
-      {skills.map((group) => (
-        <div data-reveal class="grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
-          <dt class="text-muted font-mono text-sm sm:pt-0.5">{group.label}</dt>
-          <dd>
-            <ul class="flex flex-wrap gap-2">
+    <dl class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+      {[...skills, { label: 'Fonctionnel', items: domains }].map((group, index) => (
+        <div
+          data-reveal
+          class="border-border border-t pt-4"
+          style={`--delay: ${(index % 2) * 80}ms`}
+        >
+          <dt class="text-muted text-sm">{group.label}</dt>
+          <dd class="mt-2">
+            <ul class="flex flex-wrap gap-x-4 gap-y-1 font-medium">
               {group.items.map((item) => (
-                <li>
-                  <Tag>{item}</Tag>
-                </li>
+                <li>{item}</li>
               ))}
             </ul>
           </dd>
         </div>
       ))}
-      <div data-reveal class="grid gap-2 sm:grid-cols-[8rem_1fr] sm:gap-8">
-        <dt class="text-muted font-mono text-sm">Fonctionnel</dt>
-        <dd>{domains.join(' · ')}</dd>
-      </div>
     </dl>
   </Section>
 
   <Section id="methode" title="Comment je travaille">
     <ol class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
       {principles.map((principle, index) => (
-        <li data-reveal class="flex gap-4" style={`--delay: ${(index % 2) * 100}ms`}>
-          <span aria-hidden="true" class="text-accent font-mono text-sm font-semibold">
-            {String(index + 1).padStart(2, '0')}
-          </span>
-          <div>
-            <h3 class="font-semibold">{principle.title}</h3>
-            <p class="text-muted mt-1 leading-relaxed">{principle.text}</p>
-          </div>
+        <li data-reveal style={`--delay: ${(index % 2) * 100}ms`}>
+          <h3 class="font-semibold">{principle.title}</h3>
+          <p class="text-muted mt-1 leading-relaxed">{principle.text}</p>
         </li>
       ))}
     </ol>
@@ -166,34 +162,43 @@ const buttonsDelay = elapsed;
       Projets menés sur mon temps libre pour expérimenter. Ils évoluent régulièrement, et de
       nouveaux projets arriveront bientôt.
     </p>
-    <ul class="grid gap-4 sm:grid-cols-2">
-      {projects.map((project, index) => (
+    <ul class="space-y-6">
+      {projects.map((project) => (
         <li
           data-reveal
-          class="border-border bg-surface card-lift flex flex-col rounded-lg border p-5"
-          style={`--delay: ${(index % 2) * 100}ms`}
+          class="border-border bg-surface card-lift grid overflow-hidden rounded-lg border sm:grid-cols-2"
         >
-          <h3 class="font-semibold">{project.name}</h3>
-          <p class="text-muted mt-2 flex-1 text-sm leading-relaxed">{project.description}</p>
-          <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
-            {project.stack.map((tech) => (
-              <li>
-                <Tag>{tech}</Tag>
-              </li>
-            ))}
-          </ul>
-          {project.url && (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener"
-              class="text-accent mt-5 inline-flex items-center gap-2 self-start text-sm font-medium hover:underline"
-            >
-              <Icon name="github" class="size-4" />
-              Voir le code sur GitHub
-              <span class="sr-only"> : {project.name} (nouvel onglet)</span>
-            </a>
+          {project.image && (
+            <Image
+              src={project.image}
+              alt={project.imageAlt ?? ''}
+              width={720}
+              class="border-border aspect-[16/10] w-full border-b object-cover object-top sm:order-last sm:h-full sm:border-b-0 sm:border-l"
+            />
           )}
+          <div class="flex flex-col p-5 sm:p-6">
+            <h3 class="font-semibold">{project.name}</h3>
+            <p class="text-muted mt-2 flex-1 text-sm leading-relaxed">{project.description}</p>
+            <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+              {project.stack.map((tech) => (
+                <li>
+                  <Tag>{tech}</Tag>
+                </li>
+              ))}
+            </ul>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener"
+                class="text-accent mt-5 inline-flex items-center gap-2 self-start text-sm font-medium hover:underline"
+              >
+                <Icon name="github" class="size-4" />
+                Voir le code sur GitHub
+                <span class="sr-only"> : {project.name} (nouvel onglet)</span>
+              </a>
+            )}
+          </div>
         </li>
       ))}
     </ul>
@@ -247,9 +252,9 @@ const buttonsDelay = elapsed;
     <a
       data-reveal
       href={`mailto:${site.email}`}
-      class="text-accent mt-6 inline-flex items-center gap-2 text-xl font-semibold hover:underline sm:text-2xl"
+      class="text-accent mt-6 inline-flex items-center gap-3 text-2xl font-semibold tracking-tight break-all hover:underline sm:text-4xl"
     >
-      <Icon name="mail" class="size-5" />
+      <Icon name="mail" class="size-6 shrink-0 sm:size-8" />
       {site.email}
     </a>
     <div data-reveal class="mt-8 flex flex-wrap gap-3">
