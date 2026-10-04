@@ -64,7 +64,7 @@ export const domains = [
 export const education = {
   school: "ESIEA, école d'ingénieurs du numérique",
   degree: "Diplôme d'ingénieur, majeure Software Engineering",
-  period: '2018 – 2023',
+  period: '2018 - 2023',
 };
 
 export const languages = [
