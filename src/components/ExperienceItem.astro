@@ -19,10 +19,10 @@ interface Props {
 const { experience, eager = false, newer, older } = Astro.props;
 const { id, data } = experience;
 const month = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
-const period = `${month.format(data.start)} – ${data.end ? month.format(data.end) : "aujourd'hui"}`;
+const period = `${month.format(data.start)} - ${data.end ? month.format(data.end) : "aujourd'hui"}`;
 const startYear = data.start.getFullYear();
 const endYear = data.end?.getFullYear();
-const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} — ${endYear ?? 'auj.'}`;
+const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} - ${endYear ?? 'auj.'}`;
 const caseStudyUrl = `/experiences/${id}/`;
 const dialogId = `etude-${id}`;
 const titleOf = (entry: Experience) => entry.data.client ?? entry.data.company;

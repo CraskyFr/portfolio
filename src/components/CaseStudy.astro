@@ -15,7 +15,7 @@ const { experience, header = true } = Astro.props;
 const { data } = experience;
 const { Content } = await render(experience);
 const month = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
-const period = `${month.format(data.start)} – ${data.end ? month.format(data.end) : "aujourd'hui"}`;
+const period = `${month.format(data.start)} - ${data.end ? month.format(data.end) : "aujourd'hui"}`;
 
 // La période et le poste figurent déjà dans l'en-tête (page ou carte).
 const facts = [
