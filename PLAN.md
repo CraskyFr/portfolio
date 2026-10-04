@@ -168,4 +168,4 @@ Audit et corrections guidés par les skills de design Taste (design-taste-fronte
 - [x] Mise en page : hero en deux colonnes sur grand écran, compétences en listes de texte, principes sans numéros, projet en rangée pleine largeur avec une vraie capture, adresse mail en grand
 - [x] Mouvement : une seule courbe (`cubic-bezier(0.16, 1, 0.3, 1)`), apparitions décalées de 80 ms dans les listes
 - [x] Vérifications (04/10/2026, build local) : Lighthouse mobile 100 / 100 / 96 / 100 (LCP 1,7 s), ordinateur 100 / 100 / 96 / 100 (LCP 0,4 s) ; le 96 vient du script Vercel Analytics absent en local. 360 px sans débordement en clair et en sombre, contenu visible sans JavaScript, carte d'étude de cas au clavier et à Échap
-- [ ] *(à décider)* Garder seulement les 3 lignes d'impact les plus fortes par mission dans la frise, le détail restant dans l'étude de cas (choix des lignes par Paul)
+- [x] Frise : les 3 lignes d'impact choisies par Paul pour chaque mission (les 3 premières de `highlights`), le détail restant dans l'étude de cas
