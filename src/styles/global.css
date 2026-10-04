@@ -17,6 +17,8 @@
   --accent-soft: oklch(0.95 0.025 258);
   /* Bandes latérales autour de la « feuille » de contenu (écran large). */
   --band: oklch(0.955 0.004 75);
+  /* Ombre teintée dans la famille des neutres chauds (jamais du noir pur). */
+  --shadow-tint: oklch(0.21 0.006 60 / 0.07);
   color-scheme: light;
 }
 
@@ -29,6 +31,7 @@
   --accent: oklch(0.74 0.12 255);
   --accent-soft: oklch(0.28 0.05 258);
   --band: oklch(0.135 0.004 60);
+  --shadow-tint: oklch(0.08 0.004 60 / 0.5);
   color-scheme: dark;
 }
 
@@ -92,6 +95,18 @@
 @layer components {
   [data-case-nav] {
     scrollbar-width: none;
+  }
+
+  /* Carte qui se soulève au survol : ombre douce et teintée, filet un peu plus marqué. */
+  .card-lift {
+    transition:
+      box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-lift:hover {
+    border-color: color-mix(in oklch, var(--fg) 18%, transparent);
+    box-shadow: 0 6px 20px -8px var(--shadow-tint);
   }
 
   .case-pill {
