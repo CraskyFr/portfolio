@@ -59,9 +59,13 @@ const buttonsDelay = elapsed;
       loading="eager"
       class="intro border-border mb-6 size-24 rounded-full border object-cover object-[50%_20%] sm:size-28"
     />
-    <Typewriter {...hero.name} as="h1" class="text-4xl font-bold tracking-tight sm:text-5xl" />
+    <Typewriter
+      {...hero.name}
+      as="h1"
+      class="text-4xl font-semibold tracking-tighter sm:text-5xl"
+    />
     <Typewriter {...hero.title} class="text-muted mt-2 text-xl sm:text-2xl" />
-    <Typewriter {...hero.location} class="text-accent mt-2 font-mono text-sm" />
+    <Typewriter {...hero.location} class="text-muted mt-2 font-mono text-sm" />
     <Typewriter {...hero.tagline} class="mt-6 max-w-2xl text-lg leading-relaxed" lastLine />
     <div class="mt-8 flex flex-wrap items-center gap-3">
       <Button href={site.cv} download class="intro" style={`--delay: ${buttonsDelay}ms`}>
@@ -166,7 +170,7 @@ const buttonsDelay = elapsed;
       {projects.map((project, index) => (
         <li
           data-reveal
-          class="border-border bg-surface hover:border-accent/40 flex flex-col rounded-lg border p-5 transition-colors"
+          class="border-border bg-surface card-lift flex flex-col rounded-lg border p-5"
           style={`--delay: ${(index % 2) * 100}ms`}
         >
           <h3 class="font-semibold">{project.name}</h3>
