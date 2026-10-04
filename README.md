@@ -9,7 +9,7 @@ Portfolio de **Paul Bodin**, développeur backend Java à Nantes.
 - [Astro 7](https://astro.build) : site 100 % statique, aucun JavaScript inutile côté client
 - [Tailwind CSS 4](https://tailwindcss.com) : design system en variables CSS, thèmes clair et sombre
 - TypeScript strict, contenu en Markdown / MDX (content collections typées)
-- Polices auto-hébergées (Inter, JetBrains Mono), sitemap, Open Graph, données structurées schema.org
+- Polices auto-hébergées (Geist, Geist Mono), sitemap, Open Graph, données structurées schema.org
 
 Score Lighthouse : 99 à 100 sur les quatre catégories (performance, accessibilité, bonnes pratiques, SEO).
 
