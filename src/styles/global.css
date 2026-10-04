@@ -54,6 +54,19 @@
     scrollbar-gutter: stable;
   }
 
+  /* Pas de mot isolé en fin de titre ni de paragraphe. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
   ::selection {
     @apply bg-accent text-bg;
   }
