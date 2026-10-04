@@ -11,7 +11,7 @@ highlights:
   - Backend Java Spring Boot exposant des API RESTful sur AWS, testé avec JUnit et Mockito
   - Application Angular de visualisation des données clients (tableaux, graphiques)
   - Deux bases de données, MongoDB pour les ventes et PostgreSQL pour l'authentification
-  - POC de segmentation client (géographique, comportementale, technologique)
+  - POC de segmentation client (géographique, comportementale, technologique), traduits en recommandations pour le client sur l'exploitation de ses données
   - Présentation du projet à Paris devant la direction
 stack: [Java, Spring Boot, Angular, MongoDB, PostgreSQL, AWS]
 team: 2 développeurs, 4 data analysts, un Product Owner et un responsable
@@ -52,3 +52,7 @@ L'**Advanced Customer Data Platform** est un projet de l'Innov d'Aubay. L'object
 - **POC de segmentation** client : géographique, comportementale et technologique.
 - **Présentation du projet à Paris**, devant la direction et une centaine de personnes.
 - **Rituels Scrum** : sprint planning, daily, sprint review et affinage du backlog.
+
+## Résultats
+
+- **Des recommandations concrètes** : les POC de segmentation ont débouché sur des conseils à suivre pour le client dans l'exploitation de ses données clients.

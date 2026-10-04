@@ -7,13 +7,9 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
 ## Prochaines étapes (par priorité)
 
 1. **Impact des missions** (étape 11.1) : réponses de Paul encore attendues
-   - Maisons du Monde : volumes traités par jour, sujet porté de bout en bout
-   - Code Factory : projets audités avec Green Code Pattern
-   - ACDP : suite donnée aux POC et à la présentation à Paris
-   - Clear Channel : réutilisation du prototype après la mission
    - Toutes missions : une réalisation dont Paul est fier (bug coriace, gain de performance, initiative)
 2. **Diffusion** (étape 8) : lien du site sur LinkedIn, GitHub et dans le CV
-3. **À propos plus personnel** (étape 11.4) : motivations, échange avec un collège britannique
+3. **À propos plus personnel** (étape 11.4) : motivations, ce que Paul recherche
 4. *(optionnel)* Une note technique, puis le confort des études de cas (barre de progression, schéma agrandissable)
 
 ---
@@ -122,7 +118,7 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Carte plein écran sur mobile
 - [x] Navigation : étude plus récente / plus ancienne (boutons et flèches ← →), adresse propre `/#etude-…` (partageable, bouton retour qui ferme la carte)
 - [ ] *(optionnel)* Panneau latéral sur ordinateur, barre de progression de lecture, schéma agrandissable
-- [ ] Résultats chiffrés des missions : Maisons du Monde et Code Factory faits (03/10/2026), ACDP et Clear Channel en attente des réponses de Paul
+- [ ] Résultats chiffrés des missions : faits pour les quatre missions (03/10/2026) ; volumes Maisons du Monde confidentiels, prototype Clear Channel non repris (à ne pas mentionner)
 
 ## Étape 11 — Contenu qui se démarque
 
@@ -134,12 +130,10 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [x] Maisons du Monde : RUN (analyse et correction des anomalies en production), relation avec le métier et d'autres équipes, formation des nouveaux arrivants
 - [x] Code Factory : SVS livré en production et utilisé pour présenter aux clients les projets d'innovation (première section « Résultats »)
 - [x] Maisons du Monde : une quinzaine de flux, Dead Letter Queues pour rejouer les erreurs techniques et fonctionnelles, formation de plusieurs nouveaux arrivants, intégration de OneStock pensée pour un déploiement progressif (sans pays ni mise en production affirmée : OneStock n'est pas encore en production)
-- [ ] Maisons du Monde : volumes par jour, sujet porté de bout en bout
 - [x] Code Factory : SVS respecte l'ensemble des critères RGAA, en français et en anglais
-- [ ] Code Factory : usage de Green Code Pattern (projets audités)
-- [ ] ACDP : suite donnée aux POC et à la présentation à Paris
+- [x] Code Factory : Green Code Pattern a servi à auditer plusieurs projets réels
+- [x] ACDP : les POC ont débouché sur des recommandations pour le client sur l'exploitation de ses données
 - [x] Clear Channel : sources intégrées (API TomTom et Google Maps)
-- [ ] Clear Channel : réutilisation du prototype
 
 ### 2. Points forts du profil mis en avant (accroche, À propos, tête des réalisations)
 
@@ -161,4 +155,4 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [x] Section « Comment je travaille » : 4 principes illustrés par du vécu
 - [ ] *(optionnel)* 1 ou 2 notes techniques (flux Pub/Sub rejouable, contract-first avec OpenAPI, intégration d'un OMS par API et webhooks)
 - [x] Projets personnels : ce portfolio en projet phare, avec lien GitHub (CraskyApi et CraskyUI à ajouter une fois aboutis)
-- [ ] « À propos » plus personnel : motivations, échange avec un collège britannique (ELOP Tour écarté)
+- [ ] « À propos » plus personnel : motivations, ce que Paul recherche (ELOP Tour et échange avec un collège britannique écartés)
