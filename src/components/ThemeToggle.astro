@@ -36,7 +36,11 @@ import Icon from './Icon.astro';
       document.startViewTransition(toggle).ready.then(() => {
         document.documentElement.animate(
           { clipPath: [`circle(0 at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
-          { duration: 450, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' },
+          {
+            duration: 450,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            pseudoElement: '::view-transition-new(root)',
+          },
         );
       });
     });

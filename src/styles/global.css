@@ -15,6 +15,8 @@
   --border: oklch(0.91 0.004 75);
   --accent: oklch(0.5 0.16 258);
   --accent-soft: oklch(0.95 0.025 258);
+  /* Courbe unique des animations : départ vif, arrivée très douce. */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   /* Bandes latérales autour de la « feuille » de contenu (écran large). */
   --band: oklch(0.955 0.004 75);
   /* Ombre teintée dans la famille des neutres chauds (jamais du noir pur). */
@@ -43,6 +45,9 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+
+  /* Transitions Tailwind (survols) sur la même courbe. */
+  --default-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 
   --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono Variable', ui-monospace, 'Cascadia Code', monospace;
@@ -100,8 +105,8 @@
   /* Carte qui se soulève au survol : ombre douce et teintée, filet un peu plus marqué. */
   .card-lift {
     transition:
-      box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow 200ms var(--ease-smooth),
+      border-color 200ms var(--ease-smooth);
   }
 
   .card-lift:hover {
@@ -201,7 +206,7 @@
 @media screen and (prefers-reduced-motion: no-preference) {
   /* Apparition au chargement, décalée via --delay. */
   .intro {
-    animation: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms) backwards;
+    animation: fade-up 0.5s var(--ease-smooth) var(--delay, 0ms) backwards;
   }
 
   /* Sans JS, pas d'effet machine à écrire à attendre : tout arrive d'emblée. */
@@ -214,8 +219,8 @@
     opacity: 0;
     translate: 0 0.75rem;
     transition:
-      opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms),
-      translate 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms);
+      opacity 0.6s var(--ease-smooth) var(--delay, 0ms),
+      translate 0.6s var(--ease-smooth) var(--delay, 0ms);
   }
 
   .js [data-reveal].is-visible {
@@ -225,11 +230,11 @@
 
   /* Ouverture de la carte d'étude de cas (voir ExperienceItem). */
   dialog[data-case-dialog][open] {
-    animation: fade-up 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+    animation: fade-up 0.25s var(--ease-smooth);
   }
 
   dialog[data-case-dialog][open]::backdrop {
-    animation: fade-in 0.25s ease-out;
+    animation: fade-in 0.25s var(--ease-smooth);
   }
 
   /* Effet machine à écrire (voir Typewriter) : le texte à venir garde sa place, invisible, et le
