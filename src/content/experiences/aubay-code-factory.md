@@ -8,7 +8,7 @@ start: 2023-09-01
 end: 2024-02-01
 summary: Deux applications internes, un outil d'audit de numérique responsable puis un site vitrine conforme au RGAA, en production et utilisé face aux clients.
 highlights:
-  - Green Code Pattern, outil d'audit des projets sur le numérique responsable
+  - Green Code Pattern, outil d'audit sur le numérique responsable, utilisé pour auditer plusieurs projets réels
   - SVS, site vitrine conforme à l'ensemble des critères RGAA et disponible en français et en anglais, livré en production et utilisé pour présenter aux clients les projets d'innovation
   - Backend Java Spring Boot exposant des API RESTful sur AWS, testé avec JUnit et Mockito
   - Application Angular testée avec Jasmine et Karma
@@ -69,3 +69,4 @@ La **Code Factory** d'Aubay développe des applications internes, avec une organ
 
 - **SVS est livré en production.** Aubay s'en sert pour présenter à ses clients les projets internes d'innovation : l'application sert directement l'activité commerciale.
 - **Accessibilité complète** : SVS respecte l'ensemble des critères du RGAA, en français comme en anglais.
+- **Green Code Pattern en usage réel** : l'outil a servi à auditer plusieurs projets sur l'accessibilité et l'empreinte écologique.
