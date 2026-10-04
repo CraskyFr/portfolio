@@ -67,7 +67,7 @@ Les champs `À COMPLÉTER` sont optionnels mais rendront le site plus convaincan
 
 ### Développeur Full Stack Node/React — Clear Channel France
 - **Dates** : mai 2022 – septembre 2022
-- **Lieu** : Paris et Londres (mission à l'international, moitié dans chaque ville)
+- **Lieu** : Paris (équipe internationale répartie entre Paris et Londres, travail en anglais)
 - **Contexte** : prototype d'un outil d'analyse de données publiques externes (secteur publicité). Équipe : 1 développeur, un Product Owner et un architecte logiciel
 - **Missions** :
   - API Node.js pour les fonctionnalités du front
