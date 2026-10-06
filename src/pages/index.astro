@@ -48,6 +48,14 @@ const hero = {
   tagline: typing(site.tagline, 14),
 };
 const buttonsDelay = elapsed;
+
+// Liens de contact, repris dans le hero et dans la section Contact.
+const external = { target: '_blank', rel: 'noopener' };
+const contactLinks = [
+  { href: site.cv, icon: 'download', label: 'Télécharger le CV', attrs: { download: true } },
+  { href: site.links.linkedin, icon: 'linkedin', label: 'LinkedIn', attrs: external },
+  { href: site.links.github, icon: 'github', label: 'GitHub', attrs: external },
+] as const;
 ---
 
 <BaseLayout>
@@ -71,32 +79,18 @@ const buttonsDelay = elapsed;
       <Typewriter {...hero.location} class="text-muted mt-2 font-mono text-sm" />
       <Typewriter {...hero.tagline} class="mt-6 max-w-2xl text-lg leading-relaxed" lastLine />
       <div class="mt-8 flex flex-wrap items-center gap-3">
-        <Button href={site.cv} download class="intro" style={`--delay: ${buttonsDelay}ms`}>
-          <Icon name="download" />
-          Télécharger le CV
-        </Button>
-        <Button
-          variant="secondary"
-          href={site.links.linkedin}
-          target="_blank"
-          rel="noopener"
-          class="intro"
-          style={`--delay: ${buttonsDelay + 60}ms`}
-        >
-          <Icon name="linkedin" />
-          LinkedIn
-        </Button>
-        <Button
-          variant="secondary"
-          href={site.links.github}
-          target="_blank"
-          rel="noopener"
-          class="intro"
-          style={`--delay: ${buttonsDelay + 120}ms`}
-        >
-          <Icon name="github" />
-          GitHub
-        </Button>
+        {contactLinks.map((link, index) => (
+          <Button
+            variant={index === 0 ? 'primary' : 'secondary'}
+            href={link.href}
+            {...link.attrs}
+            class="intro"
+            style={`--delay: ${buttonsDelay + index * 60}ms`}
+          >
+            <Icon name={link.icon} />
+            {link.label}
+          </Button>
+        ))}
       </div>
     </div>
   </Container>
@@ -259,18 +253,12 @@ const buttonsDelay = elapsed;
       {site.email}
     </a>
     <div data-reveal class="mt-8 flex flex-wrap gap-3">
-      <Button variant="secondary" href={site.cv} download>
-        <Icon name="download" />
-        CV (PDF)
-      </Button>
-      <Button variant="secondary" href={site.links.linkedin} target="_blank" rel="noopener">
-        <Icon name="linkedin" />
-        LinkedIn
-      </Button>
-      <Button variant="secondary" href={site.links.github} target="_blank" rel="noopener">
-        <Icon name="github" />
-        GitHub
-      </Button>
+      {contactLinks.map((link) => (
+        <Button variant="secondary" href={link.href} {...link.attrs}>
+          <Icon name={link.icon} />
+          {link.label}
+        </Button>
+      ))}
     </div>
   </Section>
 </BaseLayout>

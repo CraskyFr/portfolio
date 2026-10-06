@@ -169,3 +169,20 @@ Audit et corrections guidés par les skills de design Taste (design-taste-fronte
 - [x] Mouvement : une seule courbe (`cubic-bezier(0.16, 1, 0.3, 1)`), apparitions décalées de 80 ms dans les listes
 - [x] Vérifications (04/10/2026, build local) : Lighthouse mobile 100 / 100 / 96 / 100 (LCP 1,7 s), ordinateur 100 / 100 / 96 / 100 (LCP 0,4 s) ; le 96 vient du script Vercel Analytics absent en local. 360 px sans débordement en clair et en sombre, contenu visible sans JavaScript, carte d'étude de cas au clavier et à Échap
 - [x] Frise : les 3 lignes d'impact choisies par Paul pour chaque mission (les 3 premières de `highlights`), le détail restant dans l'étude de cas
+
+## Étape 13 — Nettoyage et fonctions natives (audit du 06/10/2026)
+
+Audit Ponytail (code superflu) et Web Interface Guidelines (Vercel) : site déjà léger, gains ciblés.
+
+### Phase 1 — Nettoyage ✅
+
+- [x] Liens CV / LinkedIn / GitHub définis une fois, repris dans le hero et la section Contact
+- [x] Helper commun pour la période et le titre d'une mission (`src/data/experience.ts`)
+- [x] Supprimés : `.vscode/launch.json` (reste du modèle Astro), balise `generator`, valeurs par défaut inutilisées de `Typewriter`
+- [x] `theme-color` aux couleurs du fond, clair et sombre
+- [x] `translate="no"` sur les badges de technos (pas de traduction automatique des noms)
+
+### Phase 2 — Fonctions natives du navigateur
+
+- [ ] Menu mobile en `popover` (Échap et clic à côté le ferment, sans script)
+- [ ] Fermeture de la carte d'étude de cas par le navigateur (`command="close"`, `closedby="any"`), le JS restant en secours
