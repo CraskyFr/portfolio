@@ -182,7 +182,7 @@ Audit Ponytail (code superflu) et Web Interface Guidelines (Vercel) : site déj�
 - [x] `theme-color` aux couleurs du fond, clair et sombre
 - [x] `translate="no"` sur les badges de technos (pas de traduction automatique des noms)
 
-### Phase 2 — Fonctions natives du navigateur
+### Phase 2 — Fonctions natives du navigateur ✅
 
-- [ ] Menu mobile en `popover` (Échap et clic à côté le ferment, sans script)
-- [ ] Fermeture de la carte d'étude de cas par le navigateur (`command="close"`, `closedby="any"`), le JS restant en secours
+- [x] Menu mobile en `popover` : Échap et clic à côté le ferment, fonctionne sans JS (script réduit à la fermeture au clic sur un lien)
+- [x] ~~Fermeture native de la carte (`command="close"`, `closedby="any"`)~~ (écarté : `closedby` absent de Safari, `command` seulement depuis Safari 26.2 ; à revoir quand Safari suivra)
