@@ -3,6 +3,7 @@ import { render, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import CaseStudy from './CaseStudy.astro';
 import Icon from './Icon.astro';
+import { periodOf, titleOf } from '../data/experience';
 import Tag from './Tag.astro';
 
 type Experience = CollectionEntry<'experiences'>;
@@ -18,14 +19,12 @@ interface Props {
 
 const { experience, eager = false, newer, older } = Astro.props;
 const { id, data } = experience;
-const month = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
-const period = `${month.format(data.start)} - ${data.end ? month.format(data.end) : "aujourd'hui"}`;
+const period = periodOf(experience);
 const startYear = data.start.getFullYear();
 const endYear = data.end?.getFullYear();
 const shortPeriod = startYear === endYear ? `${startYear}` : `${startYear} - ${endYear ?? 'auj.'}`;
 const caseStudyUrl = `/experiences/${id}/`;
 const dialogId = `etude-${id}`;
-const titleOf = (entry: Experience) => entry.data.client ?? entry.data.company;
 
 // Sommaire de la carte : le bloc « En bref », puis les sections (h2) de l'étude de cas.
 const { headings } = await render(experience);
