@@ -20,7 +20,7 @@ import {
   skills,
 } from '../data/profile';
 import { site } from '../data/site';
-import photo from '../assets/photo/paul-bodin.jpg';
+import photo from '../assets/photo/paul_bodin.png';
 
 const experiences = (await getCollection('experiences')).sort(
   (a, b) => b.data.start.getTime() - a.data.start.getTime(),
@@ -67,7 +67,7 @@ const contactLinks = [
       widths={[224, 448]}
       sizes="(min-width: 64rem) 224px, 112px"
       loading="eager"
-      class="intro border-border size-24 rounded-2xl border object-cover object-[50%_20%] sm:size-28 lg:order-last lg:size-56"
+      class="intro border-border size-24 rounded-2xl border object-cover sm:size-28 lg:order-last lg:size-56"
     />
     <div>
       <Typewriter
