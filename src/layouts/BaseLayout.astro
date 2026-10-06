@@ -51,8 +51,9 @@ const person = {
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`${site.name}, ${site.title}`} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#2453c9" />
-    <meta name="generator" content={Astro.generator} />
+    {/* Barre du navigateur mobile aux couleurs du fond (--bg), selon le thème du système. */}
+    <meta name="theme-color" content="#fbfaf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#110f0e" media="(prefers-color-scheme: dark)" />
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
     <ThemeScript />
   </head>
