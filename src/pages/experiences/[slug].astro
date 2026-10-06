@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import CaseStudy from '../../components/CaseStudy.astro';
 import Container from '../../components/Container.astro';
+import { titleOf } from '../../data/experience';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 // Seules les missions phares ont une étude de cas détaillée. Depuis la frise, elle s'ouvre
@@ -20,10 +21,9 @@ interface Props {
 }
 
 const { experience } = Astro.props;
-const { data } = experience;
 ---
 
-<BaseLayout title={data.client ?? data.company} description={data.summary}>
+<BaseLayout title={titleOf(experience)} description={experience.data.summary}>
   <span
     aria-hidden="true"
     class="reading-progress bg-accent fixed inset-x-0 top-0 z-50 h-0.5"

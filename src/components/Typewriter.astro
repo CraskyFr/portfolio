@@ -9,21 +9,14 @@ interface Props {
   as?: HTMLTag;
   class?: string;
   /** Délai avant la première lettre, en millisecondes. */
-  delay?: number;
+  delay: number;
   /** Durée d'une lettre, en millisecondes. */
-  speed?: number;
+  speed: number;
   /** Curseur laissé clignotant à la fin (dernière ligne d'une séquence). */
   lastLine?: boolean;
 }
 
-const {
-  text,
-  as: Tag = 'p',
-  class: className,
-  delay = 250,
-  speed = 55,
-  lastLine = false,
-} = Astro.props;
+const { text, as: Tag = 'p', class: className, delay, speed, lastLine = false } = Astro.props;
 ---
 
 <Tag class={className}>{text}</Tag>
