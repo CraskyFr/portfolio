@@ -30,9 +30,7 @@ const nav = [
       <ThemeToggle />
       <button
         type="button"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="menu-mobile"
+        popovertarget="menu-mobile"
         class="text-muted hover:text-fg rounded-md p-2 transition-colors md:hidden"
       >
         <span class="sr-only">Menu</span>
@@ -50,7 +48,12 @@ const nav = [
       </button>
     </nav>
   </Container>
-  <ul id="menu-mobile" hidden class="border-border border-t px-6 py-3 md:hidden">
+  {/* Menu mobile natif (popover) : Échap, un clic à côté ou le bouton le ferment, même sans JS. */}
+  <ul
+    id="menu-mobile"
+    popover
+    class="border-border bg-bg text-fg inset-x-0 top-16 bottom-auto m-0 w-full max-w-none border-0 border-b px-6 py-3 md:hidden"
+  >
     {nav.map((item) => (
       <li>
         <a href={item.href} class="text-muted hover:text-fg block py-2">
@@ -62,19 +65,9 @@ const nav = [
 </header>
 
 <script>
-  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  // Un lien vers une section de la page ne ferme pas le popover de lui-même.
   const menu = document.getElementById('menu-mobile');
-
-  if (toggle && menu) {
-    const setOpen = (open: boolean) => {
-      menu.hidden = !open;
-      toggle.setAttribute('aria-expanded', String(open));
-    };
-    toggle.addEventListener('click', () =>
-      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
-    );
-    menu.addEventListener('click', (event) => {
-      if ((event.target as HTMLElement).closest('a')) setOpen(false);
-    });
-  }
+  menu?.addEventListener('click', (event) => {
+    if ((event.target as HTMLElement).closest('a')) menu.hidePopover();
+  });
 </script>
