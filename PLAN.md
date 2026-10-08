@@ -10,7 +10,7 @@ Objectif : un site sobre, rapide et professionnel centré sur l'**expérience pr
    - Toutes missions : une réalisation dont Paul est fier (bug coriace, gain de performance, initiative)
 2. **Diffusion** (étape 8) : lien du site sur LinkedIn, GitHub et dans le CV
 3. **À propos plus personnel** (étape 11.4) : motivations, ce que Paul recherche
-4. *(optionnel)* Une note technique, puis le schéma agrandissable dans les études de cas
+4. *(optionnel)* Une note technique
 
 ---
 
@@ -118,7 +118,8 @@ Sobres et courtes (< 1 s), sans bibliothèque, désactivées si `prefers-reduced
 - [x] Carte plein écran sur mobile
 - [x] Navigation : étude plus récente / plus ancienne (boutons et flèches ← →), adresse propre `/#etude-…` (partageable, bouton retour qui ferme la carte)
 - [x] Barre de progression de lecture (carte et page dédiée, CSS scroll-driven, sans JS)
-- [ ] *(optionnel)* Panneau latéral sur ordinateur, schéma agrandissable
+- [ ] *(optionnel)* Panneau latéral sur ordinateur
+- [x] ~~Schéma agrandissable~~ (écarté : schéma en texte HTML, déjà lisible et vertical sur mobile)
 - [ ] Résultats chiffrés des missions : faits pour les quatre missions (03/10/2026) ; volumes Maisons du Monde confidentiels, prototype Clear Channel non repris (à ne pas mentionner)
 
 ## Étape 11 — Contenu qui se démarque
