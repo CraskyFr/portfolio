@@ -130,7 +130,7 @@ Objectif : montrer ce que le travail a changé (impact, responsabilités, preuve
 - [ ] 3 ou 4 lignes fortes par mission, classées par impact (verbe d'action + quoi + résultat)
 - [x] Maisons du Monde : RUN (analyse et correction des anomalies en production), relation avec le métier et d'autres équipes, formation des nouveaux arrivants
 - [x] Code Factory : SVS livré en production et utilisé pour présenter aux clients les projets d'innovation (première section « Résultats »)
-- [x] Maisons du Monde : une quinzaine de flux, Dead Letter Queues pour rejouer les erreurs techniques et fonctionnelles, formation de plusieurs nouveaux arrivants, intégration de OneStock pensée pour un déploiement progressif (sans pays ni mise en production affirmée : OneStock n'est pas encore en production)
+- [x] Maisons du Monde : refonte des flux (sans en préciser le nombre), Dead Letter Queues pour rejouer les erreurs techniques et fonctionnelles, formation de plusieurs nouveaux arrivants, intégration de OneStock pensée pour un déploiement progressif (sans pays ni mise en production affirmée : OneStock n'est pas encore en production)
 - [x] Code Factory : SVS respecte l'ensemble des critères RGAA, en français et en anglais
 - [x] Code Factory : Green Code Pattern a servi à auditer plusieurs projets réels
 - [x] ACDP : les POC ont débouché sur des recommandations pour le client sur l'exploitation de ses données
