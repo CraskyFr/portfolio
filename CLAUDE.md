@@ -1,7 +1,7 @@
 # Portfolio — Paul Bodin
 
 Site vitrine statique (Astro 7 + Tailwind CSS 4), en français uniquement, déployé sur https://paulbodin.fr.
-Le suivi des étapes est dans `PLAN.md`, le contenu brut dans `CONTENU.md`.
+Le contenu brut est dans `CONTENU.md`.
 
 ## Commandes
 
